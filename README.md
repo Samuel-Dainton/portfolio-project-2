@@ -1,8 +1,15 @@
+UX
+
+As a user I want to:
+be able to set the difficulty of the challenge
+be rewarded with sounds and congratulatory prompts for my success
+keep record of my score to see if I beat my personal best 
+
 Walkthrough of script.
 
 You have been given a set of cards
 The cards have been given pictures and shuffled randomly into a grid/flexbox.
-Are they images or icons? Are they inside divs or are they buttons?
+The cards will be images inside divs inside a flexbox
 Cards start in a hidden state and flip when clicked also prompting a sound.
 
 One card, x is flipped
@@ -23,7 +30,7 @@ If it's the first flip, store it in currentlyFlippedCard.
 
 Increment int 'flips' every time a card is flipped(flips++).
 If it's the second flip, check if the type of card matches the type of card in 'currentlyFlippedCard'.
-Can I duplicate the array so there are two cards with the index of 0, 1, 2 and etc? Can I change all the even values by +1 so that [0, 1, 2, 3, 4, 5] becomes [1, 1, 3, 3, 5, 5]
+Give the img's name="banana" and target the names to match cards
 
 How do I know if the flip is first or second? Because we increment flips every time.
 For the first flip, flip == 1; second, flip == 2; if it's flipped again, it becomes flip == 3, which we should take as the first flip.
@@ -32,7 +39,13 @@ From this, we can say that when flip is odd, it's the first flip, and when flip 
 If both flips do not match: don't make any changes.
 If both flips match: setAttribute the cards to mark them as inactive; increment int 'matches' by 2
 
-If all cards are matched, game is over. So if 'matches' == cards(array size /2?), all cards are matched.
-I need to know if the previous flip was a match. For this, I can use a variable currentlyFlippedCard.
+If all cards are matched, game is over. So if 'matches' == cards(array size), all cards are matched.
+I need to know if the previous flip was a match. For this, I can use the variable currentlyFlippedCard.
+
+For the difficulties can I have 1 big array, if difficulty is easy only select array index 0, 11 for 12 cards. Rather than having 5 arrays of the same images.
 
 ![Wireframe Image](/assets/images/wireframe.png)
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
+https://careerkarma.com/blog/javascript-queryselector-vs-getelementbyid/#:~:text=With%20a%20querySelector%20statement%2C%20you,clearly%20gets%20the%20job%20done.
