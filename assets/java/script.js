@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /**
  * Get Cards
  */
-let getImages = function () {
+let getImages = 
     [{
             imgSrc: "../images/fruit/apple.jpg",
             name: "apple"
@@ -76,7 +76,7 @@ let getImages = function () {
             name: "lemon"
         }
     ]
-}
+
 console.log(getImages)
 /**
  * Shuffle Cards
@@ -86,9 +86,9 @@ console.log(getImages)
  * Generate Card Grid
  */
 
-let imageGenerator = function () {
+let imageGenerator = function() {
 
-    getImages.forEach((item) => {
+    getImages.forEach((element) => {
         let front = document.createElement("div")
         let picture = document.createElement("img")
         let back = document.createElement("div")
@@ -98,9 +98,9 @@ let imageGenerator = function () {
         back.classList.add("back")
         
         game = document.getElementsByClassName("game")
-        game.appendChild(front);
+        game[0].appendChild(front);
         front.appendChild(picture);
-        back.appendChild(back);
+        front.appendChild(back);
     })
 };
 
