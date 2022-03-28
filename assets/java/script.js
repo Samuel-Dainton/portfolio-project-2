@@ -13,66 +13,66 @@ document.addEventListener("DOMContentLoaded", function () {
  */
 let getImages = 
     [{
-            imgSrc: "../images/fruit/apple.jpg",
+            imgSrc: "./assets/images/fruit/apple.jpg",
             name: "apple"
         },
         {
-            imgSrc: "../images/fruit/bananna.jpg",
+            imgSrc: "./assets/images/fruit/bananna.jpg",
             name: "bananna"
         },
         {
-            imgSrc: "../images/fruit/blackberry.jpg",
+            imgSrc: "./assets/images/fruit/blackberry.jpg",
             name: "blackberry"
         },
         {
-            imgSrc: "../images/fruit/blueberries.jpg",
+            imgSrc: "./assets/images/fruit/blueberries.jpg",
             name: "blueberries"
         },
         {
-            imgSrc: "../images/fruit/cherries.jpg",
+            imgSrc: "./assets/images/fruit/cherries.jpg",
             name: "cherries"
         },
         {
-            imgSrc: "../images/fruit/grapes.jpg",
+            imgSrc: "./assets/images/fruit/grapes.jpg",
             name: "grapes"
         },
         {
-            imgSrc: "../images/fruit/honeydew.jpg",
+            imgSrc: "./assets/images/fruit/honeydew.jpg",
             name: "honeydew"
         },
         {
-            imgSrc: "../images/fruit/lemon.jpg",
+            imgSrc: "./assets/images/fruit/lemon.jpg",
             name: "lemon"
         }, {
-            imgSrc: "../images/fruit/apple.jpg",
+            imgSrc: "./assets/images/fruit/apple.jpg",
             name: "apple"
         },
         {
-            imgSrc: "../images/fruit/bananna.jpg",
+            imgSrc: "./assets/images/fruit/bananna.jpg",
             name: "bananna"
         },
         {
-            imgSrc: "../images/fruit/blackberry.jpg",
+            imgSrc: "./assets/images/fruit/blackberry.jpg",
             name: "blackberry"
         },
         {
-            imgSrc: "../images/fruit/blueberries.jpg",
+            imgSrc: "./assets/images/fruit/blueberries.jpg",
             name: "blueberries"
         },
         {
-            imgSrc: "../images/fruit/cherries.jpg",
+            imgSrc: "./assets/images/fruit/cherries.jpg",
             name: "cherries"
         },
         {
-            imgSrc: "../images/fruit/grapes.jpg",
+            imgSrc: "./assets/images/fruit/grapes.jpg",
             name: "grapes"
         },
         {
-            imgSrc: "../images/fruit/honeydew.jpg",
+            imgSrc: "./assets/images/fruit/honeydew.jpg",
             name: "honeydew"
         },
         {
-            imgSrc: "../images/fruit/lemon.jpg",
+            imgSrc: "./assets/images/fruit/lemon.jpg",
             name: "lemon"
         }
     ]
@@ -93,7 +93,7 @@ let imageGenerator = function() {
         let picture = document.createElement("img")
         let back = document.createElement("div")
 
-        front.classList.add("font")
+        front.classList.add("front")
         picture.classList.add("picture")
         back.classList.add("back")
         
@@ -101,6 +101,8 @@ let imageGenerator = function() {
         game[0].appendChild(front);
         front.appendChild(picture);
         front.appendChild(back);
+
+        picture.src = element.imgSrc
     })
 };
 
