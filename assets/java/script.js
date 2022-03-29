@@ -2,8 +2,11 @@
  * Event Listeners
  */
 document.addEventListener("DOMContentLoaded", function () {
-   imageGenerator()
+    imageGenerator()
+    const cardClick = document.getElementById("card")
+    cardClick.addEventListener("click", flipCard)
 })
+
 /**
  * Select Game Type
  */
@@ -11,71 +14,70 @@ document.addEventListener("DOMContentLoaded", function () {
 /**
  * Get Cards
  */
-let getImages = 
-    [{
-            imgSrc: "./assets/images/fruit/apple.jpg",
-            name: "apple"
-        },
-        {
-            imgSrc: "./assets/images/fruit/bananna.jpg",
-            name: "bananna"
-        },
-        {
-            imgSrc: "./assets/images/fruit/blackberry.jpg",
-            name: "blackberry"
-        },
-        {
-            imgSrc: "./assets/images/fruit/blueberries.jpg",
-            name: "blueberries"
-        },
-        {
-            imgSrc: "./assets/images/fruit/cherries.jpg",
-            name: "cherries"
-        },
-        {
-            imgSrc: "./assets/images/fruit/grapes.jpg",
-            name: "grapes"
-        },
-        {
-            imgSrc: "./assets/images/fruit/honeydew.jpg",
-            name: "honeydew"
-        },
-        {
-            imgSrc: "./assets/images/fruit/lemon.jpg",
-            name: "lemon"
-        }, {
-            imgSrc: "./assets/images/fruit/apple.jpg",
-            name: "apple"
-        },
-        {
-            imgSrc: "./assets/images/fruit/bananna.jpg",
-            name: "bananna"
-        },
-        {
-            imgSrc: "./assets/images/fruit/blackberry.jpg",
-            name: "blackberry"
-        },
-        {
-            imgSrc: "./assets/images/fruit/blueberries.jpg",
-            name: "blueberries"
-        },
-        {
-            imgSrc: "./assets/images/fruit/cherries.jpg",
-            name: "cherries"
-        },
-        {
-            imgSrc: "./assets/images/fruit/grapes.jpg",
-            name: "grapes"
-        },
-        {
-            imgSrc: "./assets/images/fruit/honeydew.jpg",
-            name: "honeydew"
-        },
-        {
-            imgSrc: "./assets/images/fruit/lemon.jpg",
-            name: "lemon"
-        }
-    ]
+let getImages = [{
+        imgSrc: "./assets/images/fruit/apple.jpg",
+        name: "apple"
+    },
+    {
+        imgSrc: "./assets/images/fruit/bananna.jpg",
+        name: "bananna"
+    },
+    {
+        imgSrc: "./assets/images/fruit/blackberry.jpg",
+        name: "blackberry"
+    },
+    {
+        imgSrc: "./assets/images/fruit/blueberries.jpg",
+        name: "blueberries"
+    },
+    {
+        imgSrc: "./assets/images/fruit/cherries.jpg",
+        name: "cherries"
+    },
+    {
+        imgSrc: "./assets/images/fruit/grapes.jpg",
+        name: "grapes"
+    },
+    {
+        imgSrc: "./assets/images/fruit/honeydew.jpg",
+        name: "honeydew"
+    },
+    {
+        imgSrc: "./assets/images/fruit/lemon.jpg",
+        name: "lemon"
+    }, {
+        imgSrc: "./assets/images/fruit/apple.jpg",
+        name: "apple"
+    },
+    {
+        imgSrc: "./assets/images/fruit/bananna.jpg",
+        name: "bananna"
+    },
+    {
+        imgSrc: "./assets/images/fruit/blackberry.jpg",
+        name: "blackberry"
+    },
+    {
+        imgSrc: "./assets/images/fruit/blueberries.jpg",
+        name: "blueberries"
+    },
+    {
+        imgSrc: "./assets/images/fruit/cherries.jpg",
+        name: "cherries"
+    },
+    {
+        imgSrc: "./assets/images/fruit/grapes.jpg",
+        name: "grapes"
+    },
+    {
+        imgSrc: "./assets/images/fruit/honeydew.jpg",
+        name: "honeydew"
+    },
+    {
+        imgSrc: "./assets/images/fruit/lemon.jpg",
+        name: "lemon"
+    }
+]
 
 console.log(getImages)
 /**
@@ -86,21 +88,22 @@ console.log(getImages)
  * Generate Card Grid
  */
 
-let imageGenerator = function() {
+let imageGenerator = function () {
 
     getImages.forEach((element) => {
-        let front = document.createElement("div")
+        let card = document.createElement("div")
         let picture = document.createElement("img")
         let back = document.createElement("div")
 
-        front.classList.add("front")
+        card.classList.add("card")
+        card.id = "card"
         picture.classList.add("picture")
         back.classList.add("back")
-        
+
         game = document.getElementsByClassName("game")
-        game[0].appendChild(front);
-        front.appendChild(picture);
-        front.appendChild(back);
+        game[0].appendChild(card);
+        card.appendChild(picture);
+        card.appendChild(back);
 
         picture.src = element.imgSrc
     })
@@ -117,3 +120,8 @@ let imageGenerator = function() {
 /**
  * Congratulations
  */
+
+function flipCard() {
+    cardClick.classList.toggle("flipCard")
+    console.log("Hello!")
+}

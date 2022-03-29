@@ -50,9 +50,13 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arro
 https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
 https://careerkarma.com/blog/javascript-queryselector-vs-getelementbyid/#:~:text=With%20a%20querySelector%20statement%2C%20you,clearly%20gets%20the%20job%20done
 https://www.w3schools.com/js/js_arrow_function.asp
+https://developer.mozilla.org/en-US/docs/Web/CSS/perspective
+https://jefferson-cuartas.medium.com/how-to-create-a-flip-card-effect-using-javascript-767dd945210c
 
 Bugs:
 
 calling game.appendChild(front) returned an error because the appendChild function has to target a DOM element but game was calling a NodeList. By changing it to game[0] it calls a valid DOM element instead.
 
 Creating the image containers in Java made the elements look for their image sources starting from index.html not from script.js so I changed the pathing from ../images~ to ./assets/images~
+
+Cannot read properties of null (reading 'addEventListener')
