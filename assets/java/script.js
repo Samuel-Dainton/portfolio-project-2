@@ -2,6 +2,7 @@
  * Event Listeners
  */
 document.addEventListener("DOMContentLoaded", function () {
+    shuffledCards()
     imageGenerator()
 })
 
@@ -76,19 +77,24 @@ let getImages = [{
         name: "lemon"
     }
 ]
-
-console.log(getImages)
 /**
  * Shuffle Cards
  */
-
+let shuffledCards = () => {
+    let arrayOrder = getImages
+    arrayOrder.sort(() => Math.random() - 0.5)
+    return arrayOrder
+    console.log(arrayOrder)
+    }
+    
 /**
  * Generate Card Grid
  */
 
 let imageGenerator = function () {
-
-    getImages.forEach((element) => {
+        let arrayOrder = shuffledCards()
+        
+        arrayOrder.forEach((element) => {
         let card = document.createElement("div")
         let picture = document.createElement("img")
         let back = document.createElement("div")
