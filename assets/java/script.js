@@ -3,8 +3,6 @@
  */
 document.addEventListener("DOMContentLoaded", function () {
     imageGenerator()
-    const cardClick = document.getElementById("card")
-    cardClick.addEventListener("click", flipCard)
 })
 
 /**
@@ -106,6 +104,10 @@ let imageGenerator = function () {
         card.appendChild(back);
 
         picture.src = element.imgSrc
+
+        card.addEventListener("click", () => {
+            card.classList.toggle("flipCard")
+        })
     })
 };
 
@@ -120,8 +122,3 @@ let imageGenerator = function () {
 /**
  * Congratulations
  */
-
-function flipCard() {
-    cardClick.classList.toggle("flipCard")
-    console.log("Hello!")
-}
