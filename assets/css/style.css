@@ -9,11 +9,14 @@
 .front {
         margin: 5px;
         height: 200px;
+        width: 200px;
         background-color: blue;
+        position: relative;
 }
 
 .picture, .back {
         height: 100%;
         width: 100%;
         border: 1px black solid;
+        position: absolute;
 }
