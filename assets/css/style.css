@@ -1,11 +1,19 @@
 .game {
-   display: flex;
-   flex-wrap: wrap;
+        margin: 50px auto;
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-gap: 10px;
+        justify-content: center;
 }
 
-.game > div {
-        flex: 1 0 21%;
+.front {
         margin: 5px;
         height: 200px;
         background-color: blue;
+}
+
+.picture, .back {
+        height: 100%;
+        width: 100%;
+        border: 1px black solid;
 }
