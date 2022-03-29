@@ -44,6 +44,8 @@ I need to know if the previous flip was a match. For this, I can use the variabl
 
 For the difficulties can I have 1 big array, if difficulty is easy only select array index 0, 11 for 12 cards. Rather than having 5 arrays of the same images.
 
+The flipped cards have names but how do I select the names of the clicked cards.
+
 ![Wireframe Image](/assets/images/wireframe.png)
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions

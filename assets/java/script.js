@@ -84,14 +84,13 @@ let shuffledCards = () => {
     let arrayOrder = getImages
     arrayOrder.sort(() => Math.random() - 0.5)
     return arrayOrder
-    console.log(arrayOrder)
     }
     
 /**
  * Generate Card Grid
  */
 
-let imageGenerator = function () {
+let imageGenerator = () => {
         let arrayOrder = shuffledCards()
         
         arrayOrder.forEach((element) => {
@@ -100,6 +99,7 @@ let imageGenerator = function () {
         let back = document.createElement("div")
 
         card.classList.add("card")
+        card.setAttribute("name", element.name)
         card.id = "card"
         picture.classList.add("picture")
         back.classList.add("back")
@@ -114,12 +114,29 @@ let imageGenerator = function () {
         card.addEventListener("click", () => {
             card.classList.toggle("flipCard")
         })
+
+        if (arrayOrder.length === 2) {
+            setTimeout(compareCards, 500)
+        }
     })
 };
 
 /**
  * Compare Cards
  */
+
+compareCards = () => {
+    let firstCard = document.getElementsByName("")
+    let secondCard = document.getElementsByName("")
+    let isCorrect = firstCard === secondCard;
+
+    if (isCorrect) {
+        alert("Match!")
+    } else {
+        alert(`Oops!`)
+
+    }
+}
 
 /**
  * Count Guesses
