@@ -111,20 +111,9 @@ let imageGenerator = () => {
 
         picture.src = element.imgSrc
 
-        let hasCardFlipped = false;
-        let firstCard, secondCard;
-        card.addEventListener("click", () => {
+        card.addEventListener("click", (names) => {
             card.classList.toggle("flipCard")
-            if (!hasCardFlipped) {
-                hasCardFlipped = true;
-                firstCard = this;
-                return;
-            }
-
-            secondCard = this;
-            hasCardFlipped = false;
-
-            checkForMatch();
+            checkForMatch(names)
         })
     })
 };
@@ -132,18 +121,20 @@ let imageGenerator = () => {
 /**
  * Compare Cards
  */
-checkForMatch = () => {
-
-    if (firstCard.getAttribute("name") === secondCard.getAttribute("name")) {
-        firstCard.removeEventListener('click', flipCard);
-        secondCard.removeEventListener('click', flipCard);
+checkForMatch = (names) => {
+    let targetCard = names.target
+    targetCard.classList.add("target")
+    targetCard.classList.add("totalCards")
+    let targetCards = document.querySelectorAll(".target")
+        if (targetCards.length === 2)
         alert("Match!")
         return;
-    } else {
-        firstCard.classList.remove('flipCard');
-        secondCard.classList.remove('flipCard');
     }
-}
+    let totalCards = document.querySelectorAll(".totalCards")
+    if (totalCards.length === 4) {
+        alert("Win!")
+    }
+
 
 
 /**
