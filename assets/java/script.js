@@ -84,16 +84,16 @@ let shuffledCards = () => {
     let arrayOrder = getImages
     arrayOrder.sort(() => Math.random() - 0.5)
     return arrayOrder
-    }
-    
+}
+
 /**
  * Generate Card Grid
  */
 
 let imageGenerator = () => {
-        let arrayOrder = shuffledCards()
-        
-        arrayOrder.forEach((element) => {
+    let arrayOrder = shuffledCards()
+
+    arrayOrder.forEach((element) => {
         let card = document.createElement("div")
         let picture = document.createElement("img")
         let back = document.createElement("div")
@@ -111,32 +111,40 @@ let imageGenerator = () => {
 
         picture.src = element.imgSrc
 
+        let hasCardFlipped = false;
+        let firstCard, secondCard;
         card.addEventListener("click", () => {
             card.classList.toggle("flipCard")
-        })
+            if (!hasCardFlipped) {
+                hasCardFlipped = true;
+                firstCard = this;
+                return;
+            }
 
-        if (arrayOrder.length === 2) {
-            setTimeout(compareCards, 500)
-        }
+            secondCard = this;
+            hasCardFlipped = false;
+
+            checkForMatch();
+        })
     })
 };
 
 /**
  * Compare Cards
  */
+checkForMatch = () => {
 
-compareCards = () => {
-    let firstCard = document.getElementsByName("")
-    let secondCard = document.getElementsByName("")
-    let isCorrect = firstCard === secondCard;
-
-    if (isCorrect) {
+    if (firstCard.getAttribute("name") === secondCard.getAttribute("name")) {
+        firstCard.removeEventListener('click', flipCard);
+        secondCard.removeEventListener('click', flipCard);
         alert("Match!")
+        return;
     } else {
-        alert(`Oops!`)
-
+        firstCard.classList.remove('flipCard');
+        secondCard.classList.remove('flipCard');
     }
 }
+
 
 /**
  * Count Guesses
