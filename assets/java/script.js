@@ -99,7 +99,7 @@ let imageGenerator = () => {
         back.classList.add("back");
 
         picture.src = element.imgSrc;
-        card.setAttribute("name", element.name);
+        back.setAttribute("name", element.name);
 
         game = document.getElementsByClassName("game");
         game[0].appendChild(card);
