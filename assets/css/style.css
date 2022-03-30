@@ -24,6 +24,7 @@
         border: 1px black solid;
         position: absolute;
         backface-visibility: hidden;
+        pointer-events: none;
 }
 
 .picture {

@@ -99,7 +99,7 @@ let imageGenerator = () => {
         back.classList.add("back");
 
         picture.src = element.imgSrc;
-        back.setAttribute("name", element.name);
+        card.setAttribute("name", element.name);
 
         game = document.getElementsByClassName("game");
         game[0].appendChild(card);
@@ -121,29 +121,28 @@ let imageGenerator = () => {
 const checkForMatch = (names) => {
     let targetCard = names.target;
     targetCard.classList.add("target");
-    targetCard.classList.add("totalCards");
     let targetCards = document.querySelectorAll(".target");
     console.log(targetCards)
+
     if (targetCards.length === 2) {
         if (targetCards[0].getAttribute("name") === targetCards[1].getAttribute("name")) {
             console.log("match");
             targetCards.forEach((card) => {
-                card.classList.remove("flipCard")
-            })
+                card.classList.remove("flipCard");
+                card.style.pointerEvents = "none"
+            });
         } else {
             console.log("wrong")
             targetCards.forEach((card) => {
-                card.classList.remove("flipCard")
-                
-            })
+                card.classList.remove("flipCard");
+                            
+            });
         }
     }
-        
-}
-let totalCards = document.querySelectorAll(".totalCards")
-// if (targetCards.length === 4) {
-//     alert("Win!")
-// }
+}    
+
+
+
 
 
 
