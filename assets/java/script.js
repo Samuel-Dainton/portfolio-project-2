@@ -2,8 +2,8 @@
  * Event Listeners
  */
 document.addEventListener("DOMContentLoaded", function () {
-    shuffledCards()
-    imageGenerator()
+    shuffledCards();
+    imageGenerator();
 })
 
 /**
@@ -16,34 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
 let getImages = [{
         imgSrc: "./assets/images/fruit/apple.jpg",
         name: "apple"
-    },
-    {
-        imgSrc: "./assets/images/fruit/bananna.jpg",
-        name: "bananna"
-    },
-    {
-        imgSrc: "./assets/images/fruit/blackberry.jpg",
-        name: "blackberry"
-    },
-    {
-        imgSrc: "./assets/images/fruit/blueberries.jpg",
-        name: "blueberries"
-    },
-    {
-        imgSrc: "./assets/images/fruit/cherries.jpg",
-        name: "cherries"
-    },
-    {
-        imgSrc: "./assets/images/fruit/grapes.jpg",
-        name: "grapes"
-    },
-    {
-        imgSrc: "./assets/images/fruit/honeydew.jpg",
-        name: "honeydew"
-    },
-    {
-        imgSrc: "./assets/images/fruit/lemon.jpg",
-        name: "lemon"
     }, {
         imgSrc: "./assets/images/fruit/apple.jpg",
         name: "apple"
@@ -51,16 +23,28 @@ let getImages = [{
     {
         imgSrc: "./assets/images/fruit/bananna.jpg",
         name: "bananna"
+    }, {
+        imgSrc: "./assets/images/fruit/bananna.jpg",
+        name: "bananna"
     },
     {
+        imgSrc: "./assets/images/fruit/blackberry.jpg",
+        name: "blackberry"
+    }, {
         imgSrc: "./assets/images/fruit/blackberry.jpg",
         name: "blackberry"
     },
     {
         imgSrc: "./assets/images/fruit/blueberries.jpg",
         name: "blueberries"
+    }, {
+        imgSrc: "./assets/images/fruit/blueberries.jpg",
+        name: "blueberries"
     },
     {
+        imgSrc: "./assets/images/fruit/cherries.jpg",
+        name: "cherries"
+    }, {
         imgSrc: "./assets/images/fruit/cherries.jpg",
         name: "cherries"
     },
@@ -69,8 +53,19 @@ let getImages = [{
         name: "grapes"
     },
     {
+        imgSrc: "./assets/images/fruit/grapes.jpg",
+        name: "grapes"
+    },
+    {
         imgSrc: "./assets/images/fruit/honeydew.jpg",
         name: "honeydew"
+    }, {
+        imgSrc: "./assets/images/fruit/honeydew.jpg",
+        name: "honeydew"
+    },
+    {
+        imgSrc: "./assets/images/fruit/lemon.jpg",
+        name: "lemon"
     },
     {
         imgSrc: "./assets/images/fruit/lemon.jpg",
@@ -81,9 +76,9 @@ let getImages = [{
  * Shuffle Cards
  */
 let shuffledCards = () => {
-    let arrayOrder = getImages
-    arrayOrder.sort(() => Math.random() - 0.5)
-    return arrayOrder
+    let arrayOrder = getImages;
+    arrayOrder.sort(() => Math.random() - 0.5);
+    return arrayOrder;
 }
 
 /**
@@ -91,29 +86,31 @@ let shuffledCards = () => {
  */
 
 let imageGenerator = () => {
-    let arrayOrder = shuffledCards()
+    let arrayOrder = shuffledCards();
 
     arrayOrder.forEach((element) => {
-        let card = document.createElement("div")
-        let picture = document.createElement("img")
-        let back = document.createElement("div")
+        let card = document.createElement("div");
+        let picture = document.createElement("img");
+        let back = document.createElement("div");
 
-        card.classList.add("card")
-        card.setAttribute("name", element.name)
-        card.id = "card"
-        picture.classList.add("picture")
-        back.classList.add("back")
+        card.classList.add("card");
+        card.id = "card";
+        picture.classList.add("picture");
+        back.classList.add("back");
 
-        game = document.getElementsByClassName("game")
+        picture.src = element.imgSrc;
+        card.setAttribute("name", element.name);
+
+        game = document.getElementsByClassName("game");
         game[0].appendChild(card);
         card.appendChild(picture);
         card.appendChild(back);
 
-        picture.src = element.imgSrc
+        picture.src = element.imgSrc;
 
         card.addEventListener("click", (names) => {
-            card.classList.toggle("flipCard")
-            checkForMatch(names)
+            card.classList.toggle("flipCard");
+            checkForMatch(names);
         })
     })
 };
@@ -122,18 +119,24 @@ let imageGenerator = () => {
  * Compare Cards
  */
 checkForMatch = (names) => {
-    let targetCard = names.target
-    targetCard.classList.add("target")
-    targetCard.classList.add("totalCards")
-    let targetCards = document.querySelectorAll(".target")
-        if (targetCards.length === 2)
-        alert("Match!")
-        return;
+    let targetCard = names.target;
+    targetCard.classList.add("target");
+    console.log(targetCard)
+    targetCard.classList.add("totalCards");
+    console.log(targetCard)
+    let targetCards = document.querySelectorAll(".target");
+    console.log(targetCards)
+    if (targetCards.length === 2) {
+        if (targetCards[0].getAttribute("name") === targetCards[1].getAttribute("name")) {
+            alert("match");
+        }
     }
-    let totalCards = document.querySelectorAll(".totalCards")
-    if (totalCards.length === 4) {
-        alert("Win!")
-    }
+        
+}
+let totalCards = document.querySelectorAll(".totalCards")
+if (totalCards.length === 4) {
+    alert("Win!")
+}
 
 
 
