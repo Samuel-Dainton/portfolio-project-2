@@ -5,7 +5,6 @@
         grid-gap: 10px;
         justify-content: center;
         perspective: 800px;
-        z-index: 10;
 }
 
 .card {
@@ -16,7 +15,6 @@
         position: relative;
         transform-style: preserve-3d;
         transition: 1s ease-in-out;
-        z-index: initial;
 }
 
 .picture,
@@ -26,7 +24,6 @@
         border: 1px black solid;
         position: absolute;
         backface-visibility: hidden;
-        z-index: -1;
 }
 
 .picture {

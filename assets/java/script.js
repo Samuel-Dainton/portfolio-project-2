@@ -118,25 +118,32 @@ let imageGenerator = () => {
 /**
  * Compare Cards
  */
-checkForMatch = (names) => {
+const checkForMatch = (names) => {
     let targetCard = names.target;
     targetCard.classList.add("target");
-    console.log(targetCard)
     targetCard.classList.add("totalCards");
-    console.log(targetCard)
     let targetCards = document.querySelectorAll(".target");
     console.log(targetCards)
     if (targetCards.length === 2) {
         if (targetCards[0].getAttribute("name") === targetCards[1].getAttribute("name")) {
-            alert("match");
+            console.log("match");
+            targetCards.forEach((card) => {
+                card.classList.remove("flipCard")
+            })
+        } else {
+            console.log("wrong")
+            targetCards.forEach((card) => {
+                card.classList.remove("flipCard")
+                
+            })
         }
     }
         
 }
 let totalCards = document.querySelectorAll(".totalCards")
-if (totalCards.length === 4) {
-    alert("Win!")
-}
+// if (targetCards.length === 4) {
+//     alert("Win!")
+// }
 
 
 
