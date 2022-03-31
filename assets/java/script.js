@@ -112,9 +112,11 @@ let imageGenerator = () => {
             numberOfCards.push(element)
             console.log(numberOfCards[0])
             console.log(numberOfCards[1])
+            card.style.pointerEvents = "none"
+            setTimeout(() => card.style.pointerEvents = "auto", 3000);
             card.classList.toggle("flipCard");
             checkForMatch(names);
-            
+
         })
     })
 };

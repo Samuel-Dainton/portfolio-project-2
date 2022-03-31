@@ -1,3 +1,7 @@
+html {
+        background-color: #593625;
+}
+
 .game {
         margin: 50px auto;
         display: grid;
@@ -11,17 +15,17 @@
         margin: 5px;
         height: 200px;
         width: 200px;
-        background-color: blue;
+        background-image: url(../images/card.jpg);
         position: relative;
         transform-style: preserve-3d;
-        transition: 1s ease-in-out;
+        transition: 0.5s ease-in-out;
+        border: 2px black solid;
 }
 
 .picture,
 .back {
         height: 100%;
         width: 100%;
-        border: 1px black solid;
         position: absolute;
         backface-visibility: hidden;
         pointer-events: none;
@@ -35,6 +39,7 @@
         transform: rotateY(0);
 }
 
-.flipCard, .correct {
+.flipCard,
+.correct {
         transform: rotateY(180deg);
 }
