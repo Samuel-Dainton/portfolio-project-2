@@ -4,7 +4,7 @@
         grid-template-columns: repeat(4, auto);
         grid-gap: 10px;
         justify-content: center;
-        perspective: 800px;
+        perspective: 1000px;
 }
 
 .card {

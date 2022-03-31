@@ -111,6 +111,7 @@ let imageGenerator = () => {
         card.addEventListener("click", (names) => {
             card.classList.toggle("flipCard");
             checkForMatch(names);
+            numberOfCards.push(element)
         })
     })
 };
@@ -118,28 +119,31 @@ let imageGenerator = () => {
 /**
  * Compare Cards
  */
+let numberOfCards = []
 const checkForMatch = (names) => {
+
+    console.log(numberOfCards)
     let targetCard = names.target;
     targetCard.classList.add("target");
-    let targetCards = document.querySelectorAll(".target");
-    console.log(targetCards)
 
-    if (targetCards.length === 2) {
-        if (targetCards[0].getAttribute("name") === targetCards[1].getAttribute("name")) {
+    if (numberOfCards.length === 2) {
+        if (numberOfCards[0] === numberOfCards[1]) {
             console.log("match");
-            targetCards.forEach((card) => {
-                card.classList.remove("flipCard");
+            numberOfCards.forEach((card) => {
                 card.style.pointerEvents = "none"
+                numberOfCards = []
+                console.log(numberOfCards)
             });
         } else {
             console.log("wrong")
-            targetCards.forEach((card) => {
-                card.classList.remove("flipCard");
-                            
+            numberOfCards.forEach((card) => {
+                setTimeout(() => card.classList.remove("flipCard"), 2000);
+                numberOfCards = []
+                console.log(numberOfCards)
             });
         }
     }
-}    
+}
 
 
 
