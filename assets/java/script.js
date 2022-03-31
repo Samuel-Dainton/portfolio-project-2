@@ -109,9 +109,12 @@ let imageGenerator = () => {
         picture.src = element.imgSrc;
 
         card.addEventListener("click", (names) => {
+            numberOfCards.push(element)
+            console.log(numberOfCards[0])
+            console.log(numberOfCards[1])
             card.classList.toggle("flipCard");
             checkForMatch(names);
-            numberOfCards.push(element)
+            
         })
     })
 };
@@ -122,26 +125,34 @@ let imageGenerator = () => {
 let numberOfCards = []
 const checkForMatch = (names) => {
 
-    console.log(numberOfCards)
     let targetCard = names.target;
-    targetCard.classList.add("target");
+    targetCard.classList.add("counter");
+    let flipCard = document.querySelectorAll(".flipCard")
+    let flipCounter = document.querySelectorAll(".counter")
 
     if (numberOfCards.length === 2) {
-        if (numberOfCards[0] === numberOfCards[1]) {
+        if (numberOfCards[0].name === numberOfCards[1].name) {
             console.log("match");
-            numberOfCards.forEach((card) => {
-                card.style.pointerEvents = "none"
-                numberOfCards = []
+            flipCard.forEach((card) => {
                 console.log(numberOfCards)
+                card.style.pointerEvents = "none"
+                card.classList.add("correct")
+                numberOfCards = []
+
             });
         } else {
             console.log("wrong")
-            numberOfCards.forEach((card) => {
+            flipCard.forEach((card) => {
+                console.log(numberOfCards)
                 setTimeout(() => card.classList.remove("flipCard"), 2000);
                 numberOfCards = []
-                console.log(numberOfCards)
+
             });
         }
+    }
+    if (flipCounter.length === 16) {
+        endGame
+        console.log("Win!")
     }
 }
 
