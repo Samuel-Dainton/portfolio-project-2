@@ -172,7 +172,8 @@ let gameWin = () => {
     let win = document.createElement("div")
     win.classList.add("win")
     game[0].appendChild(win)
-    win.insertAdjacentText(`Congratulations! You matched all the cards in ${oldScore} moves!`)
+    let text = `Congratulations! You matched all the cards in ${document.getElementById("score").innerText} moves!`
+    win.insertAdjacentText("afterend", text)
     console.log("Win!")
 }
 
