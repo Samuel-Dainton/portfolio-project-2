@@ -134,21 +134,21 @@ console.log(lockCards)
 const checkForMatch = (names) => {
 
     let targetCard = names.target;
-    
+
     let flipCard = document.querySelectorAll(".flipCard")
-    
+
     if (numberOfCards.length === 2) {
-        
+
         if (numberOfCards[0].name === numberOfCards[1].name) {
             console.log("match");
-            matchSound.play();
+            setTimeout(() => matchSound.play(), 350);
             flipCounter.push(1);
             flipCard.forEach((card) => {
                 card.style.pointerEvents = "none"
                 card.classList.add("correct")
                 numberOfCards = []
                 targetCard.classList.add("counter");
-                
+
 
             });
             console.log(flipCounter)
@@ -164,9 +164,16 @@ const checkForMatch = (names) => {
         }
     }
     if (flipCounter.length === 8) {
-        setTimeout(() => winSound.play(), 2000);
-        console.log("Win!")
+        gameWin();
     }
+}
+let gameWin = () => {
+    setTimeout(() => winSound.play(), 2000);
+    let win = document.createElement("div")
+    win.classList.add("win")
+    game[0].appendChild(win)
+    win.insertAdjacentText(`Congratulations! You matched all the cards in ${oldScore} moves!`)
+    console.log("Win!")
 }
 
 

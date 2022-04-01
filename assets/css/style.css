@@ -1,15 +1,16 @@
 html {
         background-image: linear-gradient(#3ca8ff, #383cff);
+        font-family: 'Cabin', sans-serif;
 }
 
 h1 {
-        font-size: 300%;
+        font-size: 350%;
         color: #0c0f32;
         text-align: center;
 }
 
 .game {
-        margin: 50px auto;
+        margin: 30px auto;
         display: grid;
         grid-template-columns: repeat(4, auto);
         grid-gap: 10px;
@@ -52,6 +53,9 @@ h1 {
 
 .guesses {
         font-size: 200%;
-        color: #0c0f32;
+        color: #ffffff;
         text-align: center;
+        background-color: #1e2a40;
+        border-radius: 20px;
 }
+
