@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     shuffledCards();
     imageGenerator();
 })
+let cardSound = new Audio('./assets/sounds/card-flip.wav');
+let matchSound = new Audio('./assets/sounds/match.mp3');
+let winSound = new Audio('./assets/sounds/game-win.wav');
 
 /**
  * Select Game Type
@@ -109,14 +112,14 @@ let imageGenerator = () => {
         picture.src = element.imgSrc;
 
         card.addEventListener("click", (names) => {
+            cardSound.play();
             numberOfCards.push(element)
             console.log(numberOfCards[0])
             console.log(numberOfCards[1])
             card.style.pointerEvents = "none"
-            setTimeout(() => card.style.pointerEvents = "auto", 3000);
+            setTimeout(() => card.style.pointerEvents = "auto", 2500);
             card.classList.toggle("flipCard");
             checkForMatch(names);
-
         })
     })
 };
@@ -135,6 +138,7 @@ const checkForMatch = (names) => {
     if (numberOfCards.length === 2) {
         if (numberOfCards[0].name === numberOfCards[1].name) {
             console.log("match");
+            matchSound.play();
             flipCard.forEach((card) => {
                 console.log(numberOfCards)
                 card.style.pointerEvents = "none"
@@ -144,16 +148,18 @@ const checkForMatch = (names) => {
             });
         } else {
             console.log("wrong")
+            incrementScore();
             flipCard.forEach((card) => {
-                console.log(numberOfCards)
+                console.log(numberOfCards);
                 setTimeout(() => card.classList.remove("flipCard"), 2000);
-                numberOfCards = []
+                numberOfCards = [];
+                
 
             });
         }
     }
     if (flipCounter.length === 16) {
-        endGame
+        winSound.play();
         console.log("Win!")
     }
 }
@@ -166,7 +172,10 @@ const checkForMatch = (names) => {
 /**
  * Count Guesses
  */
-
+ function incrementScore() {
+    let oldScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++oldScore;
+}
 /**
  * Congratulations
  */

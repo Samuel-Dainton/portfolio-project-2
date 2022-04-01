@@ -55,6 +55,11 @@ https://www.w3schools.com/js/js_arrow_function.asp
 https://developer.mozilla.org/en-US/docs/Web/CSS/perspective
 https://jefferson-cuartas.medium.com/how-to-create-a-flip-card-effect-using-javascript-767dd945210c
 
+https://freesound.org/people/MLaudio/sounds/511484/
+https://freesound.org/people/LittleRainySeasons/sounds/335908/
+https://freesound.org/people/f4ngy/sounds/240776/
+https://99designs.co.uk/inspiration/logos/brain
+
 Bugs:
 
 calling game.appendChild(front) returned an error because the appendChild function has to target a DOM element but game was calling a NodeList. By changing it to game[0] it calls a valid DOM element instead.

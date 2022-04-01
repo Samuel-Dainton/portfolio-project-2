@@ -1,5 +1,11 @@
 html {
-        background-color: #593625;
+        background-image: linear-gradient(#3ca8ff, #383cff);
+}
+
+h1 {
+        font-size: 300%;
+        color: #0c0f32;
+        text-align: center;
 }
 
 .game {
@@ -19,7 +25,7 @@ html {
         position: relative;
         transform-style: preserve-3d;
         transition: 0.5s ease-in-out;
-        border: 2px black solid;
+        border: 2px rgb(0, 0, 0) solid;
 }
 
 .picture,
@@ -42,4 +48,10 @@ html {
 .flipCard,
 .correct {
         transform: rotateY(180deg);
+}
+
+.guesses {
+        font-size: 200%;
+        color: #0c0f32;
+        text-align: center;
 }
