@@ -128,38 +128,43 @@ let imageGenerator = () => {
  * Compare Cards
  */
 let numberOfCards = []
+let flipCounter = []
+let lockCards = document.getElementsByClassName("card")
+console.log(lockCards)
 const checkForMatch = (names) => {
 
     let targetCard = names.target;
-    targetCard.classList.add("counter");
+    
     let flipCard = document.querySelectorAll(".flipCard")
-    let flipCounter = document.querySelectorAll(".counter")
-
+    
     if (numberOfCards.length === 2) {
+        
         if (numberOfCards[0].name === numberOfCards[1].name) {
             console.log("match");
             matchSound.play();
+            flipCounter.push(1);
             flipCard.forEach((card) => {
-                console.log(numberOfCards)
                 card.style.pointerEvents = "none"
                 card.classList.add("correct")
                 numberOfCards = []
+                targetCard.classList.add("counter");
+                
 
             });
+            console.log(flipCounter)
         } else {
             console.log("wrong")
             incrementScore();
             flipCard.forEach((card) => {
-                console.log(numberOfCards);
                 setTimeout(() => card.classList.remove("flipCard"), 2000);
                 numberOfCards = [];
-                
+
 
             });
         }
     }
-    if (flipCounter.length === 16) {
-        winSound.play();
+    if (flipCounter.length === 8) {
+        setTimeout(() => winSound.play(), 2000);
         console.log("Win!")
     }
 }
@@ -172,7 +177,7 @@ const checkForMatch = (names) => {
 /**
  * Count Guesses
  */
- function incrementScore() {
+function incrementScore() {
     let oldScore = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++oldScore;
 }
