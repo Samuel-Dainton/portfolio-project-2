@@ -171,9 +171,10 @@ let gameWin = () => {
     setTimeout(() => winSound.play(), 2000);
     let win = document.createElement("div")
     win.classList.add("win")
-    game[0].appendChild(win)
+    title = document.getElementsByClassName("title")
+    title[0].appendChild(win)
     let text = `Congratulations! You matched all the cards in ${document.getElementById("score").innerText} moves!`
-    win.insertAdjacentText("afterend", text)
+    win.textContent += text
     console.log("Win!")
 }
 

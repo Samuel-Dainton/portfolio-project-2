@@ -59,3 +59,12 @@ h1 {
         border-radius: 20px;
 }
 
+.win {
+        position: absolute;
+        z-index: 100;
+        margin-top: 35%;
+        background-color: #383cff;
+        border: 5px white solid;
+        border-radius: 5%;
+
+}
