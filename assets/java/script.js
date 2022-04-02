@@ -175,14 +175,20 @@ let gameWin = () => {
     console.log("Win!");
 }
 
+let button = document.getElementsByTagName("button")
+button[0].addEventListener("click", function () {
+    restart()
+})
+
 let restart = () => {
-
+    win[0].classList.toggle("congratulationsHidden");
+    const elements = document.getElementsByClassName("card");
+    while(elements.length > 0){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+    shuffledCards();
+    imageGenerator();
 }
-
-
-
-
-
 
 /**
  * Count Guesses
