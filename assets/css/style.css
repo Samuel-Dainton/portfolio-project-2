@@ -80,7 +80,7 @@ h1 {
         border: 2px black solid;
 }
 
-.congratulations-hidden {
+.congratulationsHidden {
         opacity: 0.0;
         pointer-events: none;
 }

@@ -171,7 +171,7 @@ const checkForMatch = (names) => {
 let gameWin = () => {
     setTimeout(() => winSound.play(), 2000);
     win = document.getElementsByClassName("congratulations");
-    win.classList.toggle("congratulations-hidden");
+    win[0].classList.toggle("congratulationsHidden");
     console.log("Win!");
 }
 
