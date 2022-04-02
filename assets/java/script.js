@@ -168,6 +168,7 @@ const checkForMatch = (names) => {
         gameWin();
     }
 }
+
 let gameWin = () => {
     setTimeout(() => winSound.play(), 1000);
     win = document.getElementsByClassName("congratulations");
