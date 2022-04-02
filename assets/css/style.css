@@ -20,9 +20,9 @@ h1 {
 
 .card {
         margin: 5px;
-        height: 200px;
-        width: 200px;
-        background-image: url(../images/card.jpg);
+        height: 150px;
+        width: 150px;
+        background: url(../images/card.jpg);
         position: relative;
         transform-style: preserve-3d;
         transition: 0.5s ease-in-out;
@@ -68,4 +68,19 @@ h1 {
         border-radius: 5%;
         margin-left: 33%;
 
+}
+
+.congratulations {
+        width: 260px;
+        padding: 10px;
+        margin: auto;
+        background-color: white;
+        text-align: center;
+        transform: translate(0px, -600px);
+        border: 2px black solid;
+}
+
+.congratulations-hidden {
+        opacity: 0.0;
+        pointer-events: none;
 }

@@ -170,14 +170,8 @@ const checkForMatch = (names) => {
 }
 let gameWin = () => {
     setTimeout(() => winSound.play(), 2000);
-    let win = document.createElement("div");
-    win.classList.add("win");
-    title = document.getElementsByClassName("header");
-    title[0].appendChild(win);
-    let text = `Congratulations!<br>
-    You matched all the cards in ${document.getElementById("score").innerText} moves!<br>
-    <button data-type="submit" class="restart">Play Again?</button>`;
-    win.innerHTML += text;
+    win = document.getElementsByClassName("congratulations");
+    win.classList.toggle("congratulations-hidden");
     console.log("Win!");
 }
 
