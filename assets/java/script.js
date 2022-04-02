@@ -188,6 +188,8 @@ let restart = () => {
     }
     shuffledCards();
     imageGenerator();
+    flipCounter = [0]
+    document.getElementById("score").innerText = 0
 }
 
 /**
