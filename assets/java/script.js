@@ -141,12 +141,13 @@ const checkForMatch = (names) => {
 
         if (numberOfCards[0].name === numberOfCards[1].name) {
             console.log("match");
+            incrementScore();
             setTimeout(() => matchSound.play(), 350);
             flipCounter.push(1);
             flipCard.forEach((card) => {
-                card.style.pointerEvents = "none"
-                card.classList.add("correct")
-                numberOfCards = []
+                card.style.pointerEvents = "none";
+                card.classList.add("correct");
+                numberOfCards = [];
                 targetCard.classList.add("counter");
 
 
@@ -169,13 +170,18 @@ const checkForMatch = (names) => {
 }
 let gameWin = () => {
     setTimeout(() => winSound.play(), 2000);
-    let win = document.createElement("div")
-    win.classList.add("win")
-    title = document.getElementsByClassName("title")
-    title[0].appendChild(win)
-    let text = `Congratulations! You matched all the cards in ${document.getElementById("score").innerText} moves!`
-    win.textContent += text
-    console.log("Win!")
+    let win = document.createElement("div");
+    win.classList.add("win");
+    title = document.getElementsByClassName("header");
+    title[0].appendChild(win);
+    let text = `Congratulations! \n You matched all the cards in ${document.getElementById("score").innerText} moves! \n
+    <button data-type="submit" class="restart"></button>}`;
+    win.textContent += text;
+    console.log("Win!");
+}
+
+let restart = () => {
+
 }
 
 
