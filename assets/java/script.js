@@ -174,9 +174,10 @@ let gameWin = () => {
     win.classList.add("win");
     title = document.getElementsByClassName("header");
     title[0].appendChild(win);
-    let text = `Congratulations! \n You matched all the cards in ${document.getElementById("score").innerText} moves! \n
-    <button data-type="submit" class="restart"></button>}`;
-    win.textContent += text;
+    let text = `Congratulations!<br>
+    You matched all the cards in ${document.getElementById("score").innerText} moves!<br>
+    <button data-type="submit" class="restart">Play Again?</button>`;
+    win.innerHTML += text;
     console.log("Win!");
 }
 

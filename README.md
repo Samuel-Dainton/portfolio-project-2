@@ -46,6 +46,8 @@ For the difficulties can I have 1 big array, if difficulty is easy only select a
 
 The flipped cards have names but how do I select the names of the clicked cards.
 
+
+
 ![Wireframe Image](/assets/images/wireframe.png)
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
