@@ -120,6 +120,7 @@ let imageGenerator = () => {
             setTimeout(() => card.style.pointerEvents = "auto", 2500);
             card.classList.toggle("flipCard");
             checkForMatch(names);
+
         })
     })
 };
@@ -129,27 +130,21 @@ let imageGenerator = () => {
  */
 let numberOfCards = []
 let flipCounter = []
-let lockCards = document.getElementsByClassName("card")
-console.log(lockCards)
 const checkForMatch = (names) => {
 
     let targetCard = names.target;
-
     let flipCard = document.querySelectorAll(".flipCard")
 
     if (numberOfCards.length === 2) {
-
         if (numberOfCards[0].name === numberOfCards[1].name) {
             console.log("match");
             incrementScore();
             setTimeout(() => matchSound.play(), 350);
             flipCounter.push(1);
             flipCard.forEach((card) => {
-                card.style.pointerEvents = "none";
                 card.classList.add("correct");
                 numberOfCards = [];
                 targetCard.classList.add("counter");
-
 
             });
             console.log(flipCounter)
@@ -157,7 +152,7 @@ const checkForMatch = (names) => {
             console.log("wrong")
             incrementScore();
             flipCard.forEach((card) => {
-                setTimeout(() => card.classList.remove("flipCard"), 2000);
+                setTimeout(() => card.classList.remove("flipCard"), 1000);
                 numberOfCards = [];
 
 
@@ -184,7 +179,7 @@ button[0].addEventListener("click", function () {
 let restart = () => {
     win[0].classList.toggle("congratulationsHidden");
     const elements = document.getElementsByClassName("card");
-    while(elements.length > 0){
+    while (elements.length > 0) {
         elements[0].parentNode.removeChild(elements[0]);
     }
     shuffledCards();

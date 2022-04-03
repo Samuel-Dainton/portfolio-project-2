@@ -69,3 +69,15 @@ calling game.appendChild(front) returned an error because the appendChild functi
 Creating the image containers in Java made the elements look for their image sources starting from index.html not from script.js so I changed the pathing from ../images~ to ./assets/images~
 
 Cannot read properties of null (reading 'addEventListener')
+
+How can I make different difficulties.
+The images are in an array, so if I can set the size of the array before sending it
+But I also need to change the grid size in .game
+I need to change the number of matches it takes to win
+
+switch case
+
+viewport 100 vh for congratulations div
+blur the background on congratulations
+
+congratulations ticker
