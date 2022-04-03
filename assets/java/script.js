@@ -103,7 +103,15 @@ let getImages = [{
  */
 let shuffledCards = () => {
     if (easy === true) {
-        let arrayOrder = getImages;
+        let arrayOrder = getImages.slice(0, 16);
+        arrayOrder.sort(() => Math.random() - 0.5);
+        return arrayOrder;
+    } else if (medium === true) {
+        let arrayOrder = getImages.slice(0, 26);
+        arrayOrder.sort(() => Math.random() - 0.5);
+        return arrayOrder;
+    } else if (hard === true) {
+        let arrayOrder = getImages.slice(0, 37);
         arrayOrder.sort(() => Math.random() - 0.5);
         return arrayOrder;
     }
