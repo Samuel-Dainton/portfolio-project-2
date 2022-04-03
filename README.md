@@ -62,6 +62,8 @@ https://freesound.org/people/LittleRainySeasons/sounds/335908/
 https://freesound.org/people/f4ngy/sounds/240776/
 https://99designs.co.uk/inspiration/logos/brain
 
+https://code-boxx.com/html-css-news-ticker-horizontal-vertical/#sec-horizontal
+
 Bugs:
 
 calling game.appendChild(front) returned an error because the appendChild function has to target a DOM element but game was calling a NodeList. By changing it to game[0] it calls a valid DOM element instead.

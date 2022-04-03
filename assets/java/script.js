@@ -52,7 +52,7 @@ hardButton[0].addEventListener("click", () => {
     console.log(hard)
 })
 /**
- * Get Cards
+ * Image List
  */
 let getImages = [{
         imgSrc: "./assets/images/fruit/apple.jpg",
@@ -197,6 +197,7 @@ let getImages = [{
 /**
  * Shuffle Cards
  */
+
 let shuffledCards = () => {
     if (easy === true) {
         let arrayOrder = getImages.slice(0, 16);

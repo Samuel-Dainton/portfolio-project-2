@@ -9,6 +9,7 @@ h1 {
         color: #0c0f32;
         text-align: center;
         margin: 10px;
+        text-decoration: underline;
 }
 
 .difficulty {
@@ -26,7 +27,7 @@ button {
         text-decoration: none;
         color: #FFFFFF;
         background-color: #1e2a40;
-        text-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.35);
+        text-shadow: 0 0.5px 0.5px rgba(255, 255, 255, 0.35);
         text-align: center;
         transition: all 0.2s;
 }
@@ -72,6 +73,11 @@ button:hover {
         transform-style: preserve-3d;
         transition: 0.5s ease-in-out;
         border: 2px rgb(0, 0, 0) solid;
+        
+}
+
+.card:hover {
+        border-color: rgba(255, 255, 255, 1);
 }
 
 .easy-game>.card {
@@ -125,6 +131,7 @@ button:hover {
 
 .win-holder {
         height: 0px;
+        font-size: 150%;
 }
 
 .win {
@@ -139,7 +146,7 @@ button:hover {
 }
 
 .congratulations {
-        width: 260px;
+        width: 75%;
         padding: 10px;
         margin: auto;
         background-color: white;
@@ -152,6 +159,33 @@ button:hover {
         opacity: 0.0;
         pointer-events: none;
 }
+
+/* (A) FIXED WRAPPER */
+.hwrap {
+        overflow: hidden; /* HIDE SCROLL BAR */
+        background: #eee;
+      }
+       
+      /* (B) MOVING TICKER WRAPPER */
+      .hmove { display: flex; }
+      
+      /* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
+      .hitem {
+        flex-shrink: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        text-align: center;
+        font-size: 200%;
+      }
+       
+      /* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+      /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
+      @keyframes tickerh {
+        0% { transform: translate3d(100%, 0, 0); }
+        100% { transform: translate3d(-400%, 0, 0); }
+      }
+      .hmove { animation: tickerh linear 15s infinite; }
 
 @media (max-width: 900px) {
 
