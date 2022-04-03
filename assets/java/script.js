@@ -20,18 +20,21 @@ easyButton[0].addEventListener("click", () => {
     easy = true
     medium = false
     hard = false
+    restart();
 })
 let mediumButton = document.getElementsByClassName("medium")
 mediumButton[0].addEventListener("click", () => {
     medium = true
     easy = false
     hard = false
+    restart();
 })
 let hardButton = document.getElementsByClassName("hard")
 hardButton[0].addEventListener("click", () => {
     hard = true
     easy = false
     medium = false
+    restart();
     console.log(easy)
     console.log(medium)
     console.log(hard)
@@ -96,7 +99,88 @@ let getImages = [{
     {
         imgSrc: "./assets/images/fruit/lemon.jpg",
         name: "lemon"
-    }
+    },
+    {
+        imgSrc: "./assets/images/fruit/lime.jpg",
+        name: "lime"
+    },
+    {
+        imgSrc: "./assets/images/fruit/lime.jpg",
+        name: "lime"
+    },
+    {
+        imgSrc: "./assets/images/fruit/orange.jpg",
+        name: "orange"
+    },
+    {
+        imgSrc: "./assets/images/fruit/orange.jpg",
+        name: "orange"
+    },
+    {
+        imgSrc: "./assets/images/fruit/peach.jpg",
+        name: "peach"
+    },
+    {
+        imgSrc: "./assets/images/fruit/peach.jpg",
+        name: "peach"
+    },
+    {
+        imgSrc: "./assets/images/fruit/pear.jpg",
+        name: "pear"
+    },
+    {
+        imgSrc: "./assets/images/fruit/pear.jpg",
+        name: "pear"
+    },
+    {
+        imgSrc: "./assets/images/fruit/pineapple.jpg",
+        name: "pineapple"
+    },
+    {
+        imgSrc: "./assets/images/fruit/pineapple.jpg",
+        name: "pineapple"
+    },
+    {
+        imgSrc: "./assets/images/fruit/plum.jpg",
+        name: "plum"
+    },
+    {
+        imgSrc: "./assets/images/fruit/plum.jpg",
+        name: "plum"
+    },
+    {
+        imgSrc: "./assets/images/fruit/pom.jpg",
+        name: "pom"
+    },
+    {
+        imgSrc: "./assets/images/fruit/pom.jpg",
+        name: "pom"
+    },
+    {
+        imgSrc: "./assets/images/fruit/raspberry.jpg",
+        name: "raspberry"
+    },
+    {
+        imgSrc: "./assets/images/fruit/raspberry.jpg",
+        name: "raspberry"
+    },
+    {
+        imgSrc: "./assets/images/fruit/strawberry.jpg",
+        name: "strawberry"
+    },
+    {
+        imgSrc: "./assets/images/fruit/strawberry.jpg",
+        name: "strawberry"
+    },
+    {
+        imgSrc: "./assets/images/fruit/watermelon.jpg",
+        name: "watermelon"
+    },
+    {
+        imgSrc: "./assets/images/fruit/watermelon.jpg",
+        name: "watermelon"
+    },
+    
 ]
 /**
  * Shuffle Cards
