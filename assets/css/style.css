@@ -8,6 +8,12 @@ h1 {
         font-size: 350%;
         color: #0c0f32;
         text-align: center;
+        margin: 10px;
+}
+
+.difficulty {
+        margin: auto;
+        width: fit-content;
 }
 
 .easy-game {
@@ -22,7 +28,7 @@ h1 {
         margin: 30px auto;
         display: grid;
         grid-template-columns: repeat(5, auto);
-        grid-gap: 10px;
+        grid-gap: 0px;
         justify-content: center;
         perspective: 1000px;
 }
@@ -30,7 +36,7 @@ h1 {
         margin: 30px auto;
         display: grid;
         grid-template-columns: repeat(6, auto);
-        grid-gap: 10px;
+        grid-gap: 0px;
         justify-content: center;
         perspective: 1000px;
 }
@@ -46,6 +52,16 @@ h1 {
         transition: 0.5s ease-in-out;
         border: 2px rgb(0, 0, 0) solid;
 }
+
+.medium-game > .card {
+        height: 100px;
+        width: 100px;
+}
+.hard-game > .card {
+        height: 100px;
+        width: 100px;
+}
+
 
 .picture,
 .back {
