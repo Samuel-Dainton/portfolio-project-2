@@ -116,8 +116,7 @@ let imageGenerator = () => {
             numberOfCards.push(element)
             console.log(numberOfCards[0])
             console.log(numberOfCards[1])
-            card.style.pointerEvents = "none"
-            setTimeout(() => card.style.pointerEvents = "auto", 2500);
+            card.classList.add("correct");
             card.classList.toggle("flipCard");
             checkForMatch(names);
 
@@ -136,16 +135,17 @@ const checkForMatch = (names) => {
     let flipCard = document.querySelectorAll(".flipCard")
 
     if (numberOfCards.length === 2) {
+
         if (numberOfCards[0].name === numberOfCards[1].name) {
             console.log("match");
             incrementScore();
             setTimeout(() => matchSound.play(), 350);
             flipCounter.push(1);
             flipCard.forEach((card) => {
-                card.classList.add("correct");
+
                 numberOfCards = [];
                 targetCard.classList.add("counter");
-
+                card.classList.remove("flipCard")
             });
             console.log(flipCounter)
         } else {
@@ -153,6 +153,7 @@ const checkForMatch = (names) => {
             incrementScore();
             flipCard.forEach((card) => {
                 setTimeout(() => card.classList.remove("flipCard"), 1000);
+                setTimeout(() => card.classList.remove("correct"), 1000);
                 numberOfCards = [];
 
 

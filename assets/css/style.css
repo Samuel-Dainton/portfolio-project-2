@@ -51,6 +51,7 @@ h1 {
 .flipCard,
 .correct {
         transform: rotateY(180deg);
+        pointer-events: none;
 }
 
 .guesses {
