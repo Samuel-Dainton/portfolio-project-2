@@ -20,7 +20,7 @@ easyButton[0].addEventListener("click", () => {
     easy = true
     medium = false
     hard = false
-    easyGame = document.getElementsByClassName("game") 
+    easyGame = document.getElementsByClassName("game")
     easyGame[0].classList.add("easy-game")
     easyGame[0].classList.remove("medium-game")
     easyGame[0].classList.remove("hard-game")
@@ -31,7 +31,7 @@ mediumButton[0].addEventListener("click", () => {
     medium = true
     easy = false
     hard = false
-    easyGame = document.getElementsByClassName("game") 
+    easyGame = document.getElementsByClassName("game")
     easyGame[0].classList.remove("easy-game")
     easyGame[0].classList.add("medium-game")
     easyGame[0].classList.remove("hard-game")
@@ -42,7 +42,7 @@ hardButton[0].addEventListener("click", () => {
     hard = true
     easy = false
     medium = false
-    easyGame = document.getElementsByClassName("game") 
+    easyGame = document.getElementsByClassName("game")
     easyGame[0].classList.remove("easy-game")
     easyGame[0].classList.remove("medium-game")
     easyGame[0].classList.add("hard-game")
@@ -192,7 +192,7 @@ let getImages = [{
         imgSrc: "./assets/images/fruit/watermelon.jpg",
         name: "watermelon"
     },
-    
+
 ]
 /**
  * Shuffle Cards
@@ -301,7 +301,7 @@ const checkForMatch = (names) => {
 }
 
 let gameWin = () => {
-    setTimeout(() => winSound.play(), 1000);
+    winSound.play(), 1000;
     win = document.getElementsByClassName("congratulations");
     win[0].classList.toggle("congratulationsHidden");
     console.log("Win!");
@@ -339,8 +339,10 @@ let levelSelect = () => {
  * Count Guesses
  */
 function incrementScore() {
-    let oldScore = parseInt(document.getElementById("score").innerText);
+    let oldScore = parseInt(document.getElementById("score").innerText)
     document.getElementById("score").innerText = ++oldScore;
+    let totalScore = parseInt(document.getElementById("total-score").innerText)
+    document.getElementById("total-score").innerText = ++totalScore;
 }
 /**
  * Congratulations

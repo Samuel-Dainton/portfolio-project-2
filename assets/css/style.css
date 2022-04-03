@@ -24,7 +24,6 @@ button {
         border: 3px solid rgba(255, 255, 255, 0);
         border-radius: 20px;
         box-sizing: border-box;
-        text-decoration: none;
         color: #FFFFFF;
         background-color: #1e2a40;
         text-shadow: 0 0.5px 0.5px rgba(255, 255, 255, 0.35);
@@ -73,7 +72,7 @@ button:hover {
         transform-style: preserve-3d;
         transition: 0.5s ease-in-out;
         border: 2px rgb(0, 0, 0) solid;
-        
+
 }
 
 .card:hover {
@@ -131,28 +130,20 @@ button:hover {
 
 .win-holder {
         height: 0px;
-        font-size: 150%;
-}
-
-.win {
-        position: absolute;
-        z-index: 100;
-        margin-top: 35%;
-        background-color: #383cff;
-        border: 5px white solid;
-        border-radius: 5%;
-        margin-left: 33%;
-
 }
 
 .congratulations {
-        width: 75%;
+        width: 600px;
         padding: 10px;
         margin: auto;
         background-color: white;
         text-align: center;
         transform: translate(0px, -600px);
-        border: 2px black solid;
+        border: 5px rgb(255, 255, 255) solid;
+        background: url(../images/confetti.png);
+        background-size: contain;
+        z-index: 100;
+        font-size: 150%;
 }
 
 .congratulationsHidden {
@@ -160,32 +151,52 @@ button:hover {
         pointer-events: none;
 }
 
+.score-wrapper {
+        width: 500px;
+        margin: auto;
+        padding: 5px;
+        border-radius: 20px;
+        color: #FFFFFF;
+        background-color: #1e2a40;
+}
+
 /* (A) FIXED WRAPPER */
 .hwrap {
-        overflow: hidden; /* HIDE SCROLL BAR */
-        background: #eee;
-      }
-       
-      /* (B) MOVING TICKER WRAPPER */
-      .hmove { display: flex; }
-      
-      /* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
-      .hitem {
+        overflow: hidden;
+        /* HIDE SCROLL BAR */
+
+}
+
+/* (B) MOVING TICKER WRAPPER */
+.hmove {
+        display: flex;
+}
+
+/* (C) ITEMS - INTO A LONG HORIZONTAL ROW */
+.hitem {
         flex-shrink: 0;
         width: 100%;
         box-sizing: border-box;
         padding: 10px;
         text-align: center;
         font-size: 200%;
-      }
-       
-      /* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
-      /* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
-      @keyframes tickerh {
-        0% { transform: translate3d(100%, 0, 0); }
-        100% { transform: translate3d(-400%, 0, 0); }
-      }
-      .hmove { animation: tickerh linear 15s infinite; }
+}
+
+/* (D) ANIMATION - MOVE ITEMS FROM RIGHT TO LEFT */
+/* 4 ITEMS -400%, CHANGE THIS IF YOU ADD/REMOVE ITEMS */
+@keyframes tickerh {
+        0% {
+                transform: translate3d(100%, 0, 0);
+        }
+
+        100% {
+                transform: translate3d(-400%, 0, 0);
+        }
+}
+
+.hmove {
+        animation: tickerh linear 15s infinite;
+}
 
 @media (max-width: 900px) {
 
