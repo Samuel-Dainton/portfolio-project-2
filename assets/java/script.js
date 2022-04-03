@@ -20,21 +20,33 @@ easyButton[0].addEventListener("click", () => {
     easy = true
     medium = false
     hard = false
-    restart();
+    easyGame = document.getElementsByClassName("game") 
+    easyGame[0].classList.add("easy-game")
+    easyGame[0].classList.remove("medium-game")
+    easyGame[0].classList.remove("hard-game")
+    levelSelect();
 })
 let mediumButton = document.getElementsByClassName("medium")
 mediumButton[0].addEventListener("click", () => {
     medium = true
     easy = false
     hard = false
-    restart();
+    easyGame = document.getElementsByClassName("game") 
+    easyGame[0].classList.remove("easy-game")
+    easyGame[0].classList.add("medium-game")
+    easyGame[0].classList.remove("hard-game")
+    levelSelect();
 })
 let hardButton = document.getElementsByClassName("hard")
 hardButton[0].addEventListener("click", () => {
     hard = true
     easy = false
     medium = false
-    restart();
+    easyGame = document.getElementsByClassName("game") 
+    easyGame[0].classList.remove("easy-game")
+    easyGame[0].classList.remove("medium-game")
+    easyGame[0].classList.add("hard-game")
+    levelSelect();
     console.log(easy)
     console.log(medium)
     console.log(hard)
@@ -191,11 +203,11 @@ let shuffledCards = () => {
         arrayOrder.sort(() => Math.random() - 0.5);
         return arrayOrder;
     } else if (medium === true) {
-        let arrayOrder = getImages.slice(0, 26);
+        let arrayOrder = getImages.slice(0, 30);
         arrayOrder.sort(() => Math.random() - 0.5);
         return arrayOrder;
     } else if (hard === true) {
-        let arrayOrder = getImages.slice(0, 37);
+        let arrayOrder = getImages.slice(0, 36);
         arrayOrder.sort(() => Math.random() - 0.5);
         return arrayOrder;
     }
@@ -245,7 +257,7 @@ let imageGenerator = () => {
  * Compare Cards
  */
 let numberOfCards = []
-let flipCounter = []
+let flipCounter = [0]
 const checkForMatch = (names) => {
 
     let targetCard = names.target;
@@ -295,6 +307,17 @@ button[0].addEventListener("click", function () {
 
 let restart = () => {
     win[0].classList.toggle("congratulationsHidden");
+    const elements = document.getElementsByClassName("card");
+    while (elements.length > 0) {
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+    shuffledCards();
+    imageGenerator();
+    flipCounter = [0]
+    document.getElementById("score").innerText = 0
+}
+
+let levelSelect = () => {
     const elements = document.getElementsByClassName("card");
     while (elements.length > 0) {
         elements[0].parentNode.removeChild(elements[0]);

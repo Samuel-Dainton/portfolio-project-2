@@ -10,10 +10,26 @@ h1 {
         text-align: center;
 }
 
-.game {
+.easy-game {
         margin: 30px auto;
         display: grid;
         grid-template-columns: repeat(4, auto);
+        grid-gap: 10px;
+        justify-content: center;
+        perspective: 1000px;
+}
+.medium-game {
+        margin: 30px auto;
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        grid-gap: 10px;
+        justify-content: center;
+        perspective: 1000px;
+}
+.hard-game {
+        margin: 30px auto;
+        display: grid;
+        grid-template-columns: repeat(6, auto);
         grid-gap: 10px;
         justify-content: center;
         perspective: 1000px;
