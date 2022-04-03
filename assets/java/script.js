@@ -12,7 +12,30 @@ let winSound = new Audio('./assets/sounds/game-win.wav');
 /**
  * Select Game Type
  */
-
+var easy = true;
+var medium = false;
+var hard = false;
+let easyButton = document.getElementsByClassName("easy")
+easyButton[0].addEventListener("click", () => {
+    easy = true
+    medium = false
+    hard = false
+})
+let mediumButton = document.getElementsByClassName("medium")
+mediumButton[0].addEventListener("click", () => {
+    medium = true
+    easy = false
+    hard = false
+})
+let hardButton = document.getElementsByClassName("hard")
+hardButton[0].addEventListener("click", () => {
+    hard = true
+    easy = false
+    medium = false
+    console.log(easy)
+    console.log(medium)
+    console.log(hard)
+})
 /**
  * Get Cards
  */
@@ -79,9 +102,11 @@ let getImages = [{
  * Shuffle Cards
  */
 let shuffledCards = () => {
-    let arrayOrder = getImages;
-    arrayOrder.sort(() => Math.random() - 0.5);
-    return arrayOrder;
+    if (easy === true) {
+        let arrayOrder = getImages[0 - 15];
+        arrayOrder.sort(() => Math.random() - 0.5);
+        return arrayOrder;
+    }
 }
 
 /**
@@ -142,7 +167,6 @@ const checkForMatch = (names) => {
             setTimeout(() => matchSound.play(), 350);
             flipCounter.push(1);
             flipCard.forEach((card) => {
-
                 numberOfCards = [];
                 targetCard.classList.add("counter");
                 card.classList.remove("flipCard")
@@ -172,7 +196,7 @@ let gameWin = () => {
     console.log("Win!");
 }
 
-let button = document.getElementsByTagName("button")
+let button = document.getElementsByClassName("restart")
 button[0].addEventListener("click", function () {
     restart()
 })

@@ -68,6 +68,8 @@ calling game.appendChild(front) returned an error because the appendChild functi
 
 Creating the image containers in Java made the elements look for their image sources starting from index.html not from script.js so I changed the pathing from ../images~ to ./assets/images~
 
+javascript pointerEvents were overriding any pointer event options set in the css so I had to change all of them to css.
+
 Cannot read properties of null (reading 'addEventListener')
 
 How can I make different difficulties.
