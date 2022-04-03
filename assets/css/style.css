@@ -17,13 +17,14 @@ h1 {
 }
 
 .easy-game {
-        margin: 30px auto;
+        margin: 20px auto;
         display: grid;
         grid-template-columns: repeat(4, auto);
         grid-gap: 10px;
         justify-content: center;
         perspective: 1000px;
 }
+
 .medium-game {
         margin: 30px auto;
         display: grid;
@@ -32,6 +33,7 @@ h1 {
         justify-content: center;
         perspective: 1000px;
 }
+
 .hard-game {
         margin: 30px auto;
         display: grid;
@@ -53,11 +55,17 @@ h1 {
         border: 2px rgb(0, 0, 0) solid;
 }
 
-.medium-game > .card {
+.easy-game>.card {
+        height: 150px;
+        width: 150px;
+}
+
+.medium-game>.card {
         height: 100px;
         width: 100px;
 }
-.hard-game > .card {
+
+.hard-game>.card {
         height: 100px;
         width: 100px;
 }
@@ -96,6 +104,10 @@ h1 {
         margin: auto;
 }
 
+.win-holder {
+        height: 0px;
+}
+
 .win {
         position: absolute;
         z-index: 100;
@@ -124,9 +136,32 @@ h1 {
 
 @media (max-width: 900px) {
 
-        .card {
+        .easy-game>.card {
                 height: 100px;
                 width: 100px;
+        }
+
+        .medium-game>.card {
+                height: 75px;
+                width: 75px;
+        }
+
+        .hard-game>.card {
+                height: 75px;
+                width: 75px;
+        }
+
+        .guesses {
+                font-size: 150%;
+                width: 400px;
+
+        }
+}
+
+@media (max-width: 700px) {
+        .hard-game>.card {
+                height: 50px;
+                width: 50px;
         }
 }
 
@@ -147,9 +182,9 @@ h1 {
         }
 
         .guesses {
-                font-size: 150%;
+
                 width: 300px;
-                margin: auto;
+
         }
 }
 
@@ -158,19 +193,33 @@ h1 {
         h1 {
                 font-size: 150%;
         }
+
         .game {
                 grid-gap: 2.5px;
         }
 
-        .card {
+        .easy-game>.card {
                 height: 50px;
                 width: 50px;
                 margin: 2px;
         }
 
+        .medium-game>.card {
+                height: 50px;
+                width: 50px;
+                margin: 2px;
+        }
+
+        .hard-game>.card {
+                height: 40px;
+                width: 40px;
+        }
+
+
+
         .guesses {
                 font-size: 100%;
                 width: 200px;
-                margin: auto;
+
         }
 }
