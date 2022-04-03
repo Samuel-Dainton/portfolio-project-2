@@ -103,7 +103,7 @@ let getImages = [{
  */
 let shuffledCards = () => {
     if (easy === true) {
-        let arrayOrder = getImages[0 - 15];
+        let arrayOrder = getImages;
         arrayOrder.sort(() => Math.random() - 0.5);
         return arrayOrder;
     }
