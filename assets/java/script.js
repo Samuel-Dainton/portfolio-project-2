@@ -257,7 +257,7 @@ let imageGenerator = () => {
  * Compare Cards
  */
 let numberOfCards = []
-let flipCounter = [0]
+let flipCounter = []
 const checkForMatch = (names) => {
 
     let targetCard = names.target;
@@ -288,7 +288,13 @@ const checkForMatch = (names) => {
             });
         }
     }
-    if (flipCounter.length === 8) {
+    if (easy === true && flipCounter.length === 8) {
+        gameWin();
+    }
+    if (medium === true && flipCounter.length === 15) {
+        gameWin();
+    }
+    if (hard === true && flipCounter.length === 18) {
         gameWin();
     }
 }
@@ -324,7 +330,7 @@ let levelSelect = () => {
     }
     shuffledCards();
     imageGenerator();
-    flipCounter = [0]
+    flipCounter = []
     document.getElementById("score").innerText = 0
 }
 
