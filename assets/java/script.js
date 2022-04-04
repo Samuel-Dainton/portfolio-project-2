@@ -1,17 +1,25 @@
 /**
  * Event Listeners
  */
+
 document.addEventListener("DOMContentLoaded", function () {
     shuffledCards();
     imageGenerator();
 })
+
+/**
+ * Audio
+ */
+
 let cardSound = new Audio('./assets/sounds/card-flip.wav');
 let matchSound = new Audio('./assets/sounds/match.mp3');
 let winSound = new Audio('./assets/sounds/game-win.wav');
 
 /**
- * Select Game Type
+ * Select Game Type - Used by the Card Grid Generator to determine the cards used
+ * and by the CSS to change the layout of the grid.
  */
+
 var easy = true;
 var medium = false;
 var hard = false;
@@ -51,9 +59,11 @@ hardButton[0].addEventListener("click", () => {
     console.log(medium)
     console.log(hard)
 })
+
 /**
- * Image List
+ * Image List - An array of all the images, taken by the Shuffle Cards section before going into the game.
  */
+
 let getImages = [{
         imgSrc: "./assets/images/fruit/apple.jpg",
         name: "apple"
@@ -194,8 +204,10 @@ let getImages = [{
     },
 
 ]
+
 /**
- * Shuffle Cards
+ * Shuffle Cards - Takes the getImages array, slices it down to size depending on the difficulty and shuffles
+ * those cards into the new arrayOrder which is sent to the card grid generator.
  */
 
 let shuffledCards = () => {
@@ -215,7 +227,13 @@ let shuffledCards = () => {
 }
 
 /**
- * Generate Card Grid
+ * Generate Card Grid - Creates the cards by placing div elements into a grid, then placing
+ * the front of the card as an image using the shuffled array and creates the back of the card using
+ * a single image in the CSS.
+ * Each card has the name of the image attached to it for checking. 
+ * The card divs can be clicked on which pushes the clicked card into the numberOfCards array for checking
+ * and triggers the checkForMatch function.
+ * The front and the back of the cards rotate 180degrees when the card is clicked on.
  */
 
 let imageGenerator = () => {
@@ -255,8 +273,17 @@ let imageGenerator = () => {
 };
 
 /**
- * Compare Cards
+ * Compare Cards - After a card is clicked on the checkForMatch function checks if there are 2
+ * cards in the numberOfCards array. 
+ * If so, it then compares the names of the cards. 
+ * If correct,
+ * the turn counter is increased, audio signals a match to the player, a 'counter' is added to
+ * an array that checks for the end of the game, the array that compares the cards is cleared and
+ * two classes are changed so that the cards stay flipped over and becomes unclickable.
+ * If incorrect,
+ * the turn counter is increased and the cards flip back over after a short delay.
  */
+
 let numberOfCards = []
 let flipCounter = []
 const checkForMatch = (names) => {
@@ -289,6 +316,7 @@ const checkForMatch = (names) => {
             });
         }
     }
+    /* Checks for if the player has won. */
     if (easy === true && flipCounter.length === 8) {
         gameWin();
     }
@@ -300,12 +328,23 @@ const checkForMatch = (names) => {
     }
 }
 
+/**
+ * Game Win - When the if statements in the card checker trigger the gameWin, the div containing 
+ * the congratulations message becomes visable and interactable.
+ */
+
 let gameWin = () => {
     winSound.play(), 1000;
     win = document.getElementsByClassName("congratulations");
     win[0].classList.toggle("congratulationsHidden");
     console.log("Win!");
 }
+
+/**
+ * Restart Buttons - The "Play Again?" button and difficulty buttons are both used to state the game over.
+ * The difficulty buttons are kept seperate so as not to trigger the classlist.toggle which would
+ * otherwise make the Congratulations message appear on the screen.
+ */
 
 let button = document.getElementsByClassName("restart")
 button[0].addEventListener("click", function () {
@@ -320,7 +359,7 @@ let restart = () => {
     }
     shuffledCards();
     imageGenerator();
-    flipCounter = [0]
+    flipCounter = []
     document.getElementById("score").innerText = 0
 }
 
@@ -336,14 +375,13 @@ let levelSelect = () => {
 }
 
 /**
- * Count Guesses
+ * Moves Counter - Increases the number of moves and inserts the number into two places on the page 
+ * where it is visible to the player.
  */
+
 function incrementScore() {
     let oldScore = parseInt(document.getElementById("score").innerText)
     document.getElementById("score").innerText = ++oldScore;
     let totalScore = parseInt(document.getElementById("total-score").innerText)
     document.getElementById("total-score").innerText = ++totalScore;
 }
-/**
- * Congratulations
- */

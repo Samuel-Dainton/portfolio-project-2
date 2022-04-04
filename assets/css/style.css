@@ -138,7 +138,7 @@ button:hover {
         margin: auto;
         background-color: white;
         text-align: center;
-        transform: translate(0px, -600px);
+        transform: translate(0px, -500px);
         border: 5px rgb(255, 255, 255) solid;
         background: url(../images/confetti.png);
         background-size: contain;
@@ -159,6 +159,8 @@ button:hover {
         color: #FFFFFF;
         background-color: #1e2a40;
 }
+
+/* News Ticker Animation for the "Congratulations!". */
 
 /* (A) FIXED WRAPPER */
 .hwrap {
@@ -198,6 +200,8 @@ button:hover {
         animation: tickerh linear 15s infinite;
 }
 
+/* Media device size queries */
+
 @media (max-width: 900px) {
 
         .easy-game>.card {
@@ -220,12 +224,20 @@ button:hover {
                 width: 400px;
 
         }
+
+        .congratulations {
+                transform: translate(0px, -390px);
+        }
 }
 
 @media (max-width: 700px) {
         .hard-game>.card {
                 height: 50px;
                 width: 50px;
+        }
+
+                .restart {
+                font-size: 70%;
         }
 }
 
@@ -249,6 +261,17 @@ button:hover {
 
                 width: 300px;
 
+        }
+
+        .congratulations {
+                width: 260px;
+                padding: 10px;
+                transform: translate(0px, -340px);
+                font-size: 70%;
+        }
+
+        .score-wrapper {
+                width: 250px;
         }
 }
 
@@ -285,5 +308,9 @@ button:hover {
                 font-size: 100%;
                 width: 200px;
 
+        }
+
+        .congratulations {
+                transform: translate(0px, -224px);
         }
 }
