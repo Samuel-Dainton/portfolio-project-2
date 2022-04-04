@@ -17,31 +17,38 @@
 </head>
 
 <body>
-    <section class="header">
-        <h1 class="title">Memory Game</h1>
-    </section>
-    <section class="difficulty">
-        <button data-type="submit" class="easy">Easy</button>
-        <button data-type="submit" class="medium">Medium</button>
-        <button data-type="submit" class="hard">Hard</button>
-    </section>
-    <section class="game easy-game"></section>
-
-    <section class="score-area">
-        <p class="guesses">Number of Moves: <span id="score">0</span></p>
-    </section>
-    <section class="win-holder">
-        <div class="hwrap congratulations congratulationsHidden">
-            <div class="score-wrapper">You matched all the cards in <span id="total-score">0</span> moves!</div>
-            <div class="hmove">
-                <div class="hitem">CONGRATULATIONS!</div>
-                <div class="hitem">CONGRATULATIONS!</div>
-                <div class="hitem">CONGRATULATIONS!</div>
-                <div class="hitem">CONGRATULATIONS!</div>
+    <!--Memory Game Title-->
+    <section class="filler">
+        <section class="header">
+            <h1 class="title">Memory Game</h1>
+        </section>
+        <!--Difficulty Buttons-->
+        <section class="difficulty">
+            <button data-type="submit" class="easy">Easy</button>
+            <button data-type="submit" class="medium">Medium</button>
+            <button data-type="submit" class="hard">Hard</button>
+        </section>
+        <!--Game Section - Set to easy to start.-->
+        <section class="game easy-game"></section>
+        <!--Number of Guesses-->
+        <section class="score-area">
+            <p class="guesses">Number of Moves: <span id="score">0</span></p>
+        </section>
+        <!--Congratulations - Hidden until triggered.-->
+        <section class="win-holder">
+            <div class="hwrap congratulations congratulationsHidden">
+                <div class="score-wrapper">You matched all the cards in <span id="total-score">0</span> moves!</div>
+                <div class="hmove">
+                    <div class="hitem">CONGRATULATIONS!</div>
+                    <div class="hitem">CONGRATULATIONS!</div>
+                    <div class="hitem">CONGRATULATIONS!</div>
+                    <div class="hitem">CONGRATULATIONS!</div>
+                </div>
+                <button data-type="submit" class="restart">Play Again?</button>
             </div>
-            <button data-type="submit" class="restart">Play Again?</button>
-        </div>
+        </section>
     </section>
+    <footer class="footer">Copyright © Samuel Dainton - 2022</footer>
     <script src="assets/java/script.js"></script>
 </body>
 
