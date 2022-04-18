@@ -57,7 +57,7 @@ button:hover {
 .medium-game {
         margin: 30px auto;
         display: grid;
-        grid-template-columns: repeat(5, auto);
+        grid-template-columns: repeat(6, auto);
         grid-gap: 0px;
         justify-content: center;
         perspective: 1000px;
@@ -196,12 +196,14 @@ button:hover {
 
 .filler {
         min-height: calc(100vh - 120px);
-    }
-.footer{
+}
+
+.footer {
         color: #FFFFFF;
         background-color: #1e2a40;
         width: 100%;
         text-align: center;
+        margin-top: 10px;
 }
 
 
@@ -259,6 +261,10 @@ button:hover {
 
         .restart {
                 font-size: 70%;
+        }
+
+        .footer {
+                font-size: 80%;
         }
 }
 
@@ -334,4 +340,5 @@ button:hover {
         .congratulations {
                 transform: translate(0px, -224px);
         }
+        .footer{ font-size: 70%;}
 }

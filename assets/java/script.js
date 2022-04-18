@@ -23,41 +23,41 @@ let winSound = new Audio('./assets/sounds/game-win.wav');
 var easy = true;
 var medium = false;
 var hard = false;
-let easyButton = document.getElementsByClassName("easy")
+let easyButton = document.getElementsByClassName("easy");
 easyButton[0].addEventListener("click", () => {
-    easy = true
-    medium = false
-    hard = false
-    easyGame = document.getElementsByClassName("game")
-    easyGame[0].classList.add("easy-game")
-    easyGame[0].classList.remove("medium-game")
-    easyGame[0].classList.remove("hard-game")
+    easy = true;
+    medium = false;
+    hard = false;
+    easyGame = document.getElementsByClassName("game");
+    easyGame[0].classList.add("easy-game");
+    easyGame[0].classList.remove("medium-game");
+    easyGame[0].classList.remove("hard-game");
     levelSelect();
 })
-let mediumButton = document.getElementsByClassName("medium")
+let mediumButton = document.getElementsByClassName("medium");
 mediumButton[0].addEventListener("click", () => {
-    medium = true
-    easy = false
-    hard = false
-    easyGame = document.getElementsByClassName("game")
-    easyGame[0].classList.remove("easy-game")
-    easyGame[0].classList.add("medium-game")
-    easyGame[0].classList.remove("hard-game")
+    medium = true;
+    easy = false;
+    hard = false;
+    easyGame = document.getElementsByClassName("game");
+    easyGame[0].classList.remove("easy-game");
+    easyGame[0].classList.add("medium-game");
+    easyGame[0].classList.remove("hard-game");
     levelSelect();
 })
-let hardButton = document.getElementsByClassName("hard")
+let hardButton = document.getElementsByClassName("hard");
 hardButton[0].addEventListener("click", () => {
-    hard = true
-    easy = false
-    medium = false
-    easyGame = document.getElementsByClassName("game")
-    easyGame[0].classList.remove("easy-game")
-    easyGame[0].classList.remove("medium-game")
-    easyGame[0].classList.add("hard-game")
+    hard = true;
+    easy = false;
+    medium = false;
+    easyGame = document.getElementsByClassName("game");
+    easyGame[0].classList.remove("easy-game");
+    easyGame[0].classList.remove("medium-game");
+    easyGame[0].classList.add("hard-game");
     levelSelect();
-    console.log(easy)
-    console.log(medium)
-    console.log(hard)
+    console.log(easy);
+    console.log(medium);
+    console.log(hard);
 })
 
 /**
@@ -216,7 +216,7 @@ let shuffledCards = () => {
         arrayOrder.sort(() => Math.random() - 0.5);
         return arrayOrder;
     } else if (medium === true) {
-        let arrayOrder = getImages.slice(0, 30);
+        let arrayOrder = getImages.slice(0, 24);
         arrayOrder.sort(() => Math.random() - 0.5);
         return arrayOrder;
     } else if (hard === true) {
@@ -261,9 +261,9 @@ let imageGenerator = () => {
 
         card.addEventListener("click", (names) => {
             cardSound.play();
-            numberOfCards.push(element)
-            console.log(numberOfCards[0])
-            console.log(numberOfCards[1])
+            numberOfCards.push(element);
+            console.log(numberOfCards[0]);
+            console.log(numberOfCards[1]);
             card.classList.add("correct");
             card.classList.toggle("flipCard");
             checkForMatch(names);
@@ -289,7 +289,7 @@ let flipCounter = []
 const checkForMatch = (names) => {
 
     let targetCard = names.target;
-    let flipCard = document.querySelectorAll(".flipCard")
+    let flipCard = document.querySelectorAll(".flipCard");
 
     if (numberOfCards.length === 2) {
 
@@ -301,11 +301,11 @@ const checkForMatch = (names) => {
             flipCard.forEach((card) => {
                 numberOfCards = [];
                 targetCard.classList.add("counter");
-                card.classList.remove("flipCard")
+                card.classList.remove("flipCard");
             });
             console.log(flipCounter)
         } else {
-            console.log("wrong")
+            console.log("wrong");
             incrementScore();
             flipCard.forEach((card) => {
                 setTimeout(() => card.classList.remove("flipCard"), 1000);
@@ -320,7 +320,7 @@ const checkForMatch = (names) => {
     if (easy === true && flipCounter.length === 8) {
         gameWin();
     }
-    if (medium === true && flipCounter.length === 15) {
+    if (medium === true && flipCounter.length === 12) {
         gameWin();
     }
     if (hard === true && flipCounter.length === 18) {
@@ -346,9 +346,9 @@ let gameWin = () => {
  * otherwise make the Congratulations message appear on the screen.
  */
 
-let button = document.getElementsByClassName("restart")
+let button = document.getElementsByClassName("restart");
 button[0].addEventListener("click", function () {
-    restart()
+    restart();
 })
 
 let restart = () => {
@@ -359,7 +359,7 @@ let restart = () => {
     }
     shuffledCards();
     imageGenerator();
-    flipCounter = []
+    flipCounter = [];
     document.getElementById("score").innerText = 0
 }
 
@@ -370,8 +370,8 @@ let levelSelect = () => {
     }
     shuffledCards();
     imageGenerator();
-    flipCounter = []
-    document.getElementById("score").innerText = 0
+    flipCounter = [];
+    document.getElementById("score").innerText = 0;
 }
 
 /**
@@ -380,8 +380,8 @@ let levelSelect = () => {
  */
 
 function incrementScore() {
-    let oldScore = parseInt(document.getElementById("score").innerText)
+    let oldScore = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++oldScore;
-    let totalScore = parseInt(document.getElementById("total-score").innerText)
+    let totalScore = parseInt(document.getElementById("total-score").innerText);
     document.getElementById("total-score").innerText = ++totalScore;
 }
