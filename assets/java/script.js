@@ -23,6 +23,11 @@ let winSound = new Audio('./assets/sounds/game-win.wav');
 var easy = true;
 var medium = false;
 var hard = false;
+var previousEasyScore = 100
+var previousMediumScore = 100
+var previousHardScore = 100
+let hiddenScore = 0;
+
 let easyButton = document.getElementsByClassName("easy");
 easyButton[0].addEventListener("click", () => {
     easy = true;
@@ -33,6 +38,8 @@ easyButton[0].addEventListener("click", () => {
     easyGame[0].classList.remove("medium-game");
     easyGame[0].classList.remove("hard-game");
     levelSelect();
+    hiddenScore = 0
+    document.getElementById("difficulty-text").innerText = "Easy";
 })
 let mediumButton = document.getElementsByClassName("medium");
 mediumButton[0].addEventListener("click", () => {
@@ -44,6 +51,8 @@ mediumButton[0].addEventListener("click", () => {
     easyGame[0].classList.add("medium-game");
     easyGame[0].classList.remove("hard-game");
     levelSelect();
+    hiddenScore = 0
+    document.getElementById("difficulty-text").innerText = "Medium"
 })
 let hardButton = document.getElementsByClassName("hard");
 hardButton[0].addEventListener("click", () => {
@@ -55,9 +64,8 @@ hardButton[0].addEventListener("click", () => {
     easyGame[0].classList.remove("medium-game");
     easyGame[0].classList.add("hard-game");
     levelSelect();
-    console.log(easy);
-    console.log(medium);
-    console.log(hard);
+    hiddenScore = 0
+    document.getElementById("difficulty-text").innerText = "Hard"
 })
 
 /**
@@ -327,7 +335,16 @@ const checkForMatch = (names) => {
         gameWin();
     }
 }
+/**
+ * Moves Counter - Increases the number of moves and inserts the number into two places on the page 
+ * where it is visible to the player.
+ */
 
+ function incrementScore() {
+    let totalScore = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = ++totalScore;
+    ++hiddenScore;
+}
 /**
  * Game Win - When the if statements in the card checker trigger the gameWin, the div containing 
  * the congratulations message becomes visable and interactable.
@@ -337,6 +354,18 @@ let gameWin = () => {
     winSound.play(), 1000;
     win = document.getElementsByClassName("congratulations");
     win[0].classList.toggle("congratulationsHidden");
+    if (easy === true && hiddenScore < previousEasyScore) {
+        previousEasyScore = hiddenScore
+        document.getElementById("previous-score").innerText = previousEasyScore;
+    }
+    if (medium === true && hiddenScore < previousMediumScore) {
+        previousEasyScore = hiddenScore
+        document.getElementById("previous-score").innerText = previousEasyScore;
+    }
+    if (hard === true && hiddenScore < previousHardScore) {
+        previousEasyScore = hiddenScore
+        document.getElementById("previous-score").innerText = previousEasyScore;
+    }
     console.log("Win!");
 }
 
@@ -360,6 +389,7 @@ let restart = () => {
     shuffledCards();
     imageGenerator();
     flipCounter = [];
+    hiddenScore = 0
     document.getElementById("score").innerText = 0
 }
 
@@ -374,14 +404,3 @@ let levelSelect = () => {
     document.getElementById("score").innerText = 0;
 }
 
-/**
- * Moves Counter - Increases the number of moves and inserts the number into two places on the page 
- * where it is visible to the player.
- */
-
-function incrementScore() {
-    let oldScore = parseInt(document.getElementById("score").innerText);
-    document.getElementById("score").innerText = ++oldScore;
-    let totalScore = parseInt(document.getElementById("total-score").innerText);
-    document.getElementById("total-score").innerText = ++totalScore;
-}
