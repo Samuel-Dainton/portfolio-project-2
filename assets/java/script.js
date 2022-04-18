@@ -354,6 +354,7 @@ let gameWin = () => {
     winSound.play(), 1000;
     win = document.getElementsByClassName("congratulations");
     win[0].classList.toggle("congratulationsHidden");
+    /* If statements update the users best score depending on the difficulty */
     if (easy === true && hiddenScore < previousEasyScore) {
         previousEasyScore = hiddenScore
         document.getElementById("previous-score").innerText = previousEasyScore;
@@ -370,7 +371,7 @@ let gameWin = () => {
 }
 
 /**
- * Restart Buttons - The "Play Again?" button and difficulty buttons are both used to state the game over.
+ * Restart Buttons - The "Play Again?" button and difficulty buttons are both used to start the game over.
  * The difficulty buttons are kept seperate so as not to trigger the classlist.toggle which would
  * otherwise make the Congratulations message appear on the screen.
  */
