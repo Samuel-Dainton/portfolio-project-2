@@ -1,11 +1,10 @@
 # Memory Game
 
-The Memory Game is a game made primarily using Javascript in which users must match all the pairs of cards with fruit
-icons on them. It is a test of memory as once two cards that are not a matching pair are slected, the cards quickly turn themselves back over. If a user finds a new card matching one they found previously, they'll have to remember where the last one they found was otherwise it will increase their score.
+The Memory Game is a game made primarily using Javascript in which the user must match all the pairs of cards with fruit icons on them. It is a test of memory as once two cards that are not a matching pair are slected, the cards quickly turn themselves back over. If a user finds a new card matching one they found previously, they'll have to remember where the last one they found was otherwise it will increase their score.
 
-The game offers 3 levels of difficulty, a score tracker to signify if they improved on their best score or not and has a variety of audio and visual queues to keep users engaged and entertained.
+The game offers 3 levels of difficulty, a score tracker to signify if the user improved on their best score or not and has a variety of audio and visual queues to keep them engaged and entertained.
 
-For the purposes of testing, using the inspect tool you can open up the 'game' <section> which will help you to match the cards as you can see the names of the images.
+For the purposes of testing, using the inspect tool you can open up the 'game' section which will help you to match the cards as you can see the names of the images.
 You can also type gameWin() into the console which will trigger what would happen if you were to match all the cards.
 
 [Responsive Test Image](/assets/images/readme-screenshots/responsive.png)

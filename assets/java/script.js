@@ -343,6 +343,8 @@ const checkForMatch = (names) => {
  function incrementScore() {
     let totalScore = parseInt(document.getElementById("score").innerText);
     document.getElementById("score").innerText = ++totalScore;
+    let incrementScore = parseInt(document.getElementById("total-score").innerText);
+    document.getElementById("total-score").innerText = ++incrementScore;
     ++hiddenScore;
 }
 /**
