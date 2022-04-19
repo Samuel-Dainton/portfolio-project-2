@@ -393,6 +393,7 @@ let restart = () => {
     imageGenerator();
     flipCounter = [];
     hiddenScore = 0
+    document.getElementById("total-score").innerText = 0
     document.getElementById("score").innerText = 0
 }
 
@@ -404,6 +405,7 @@ let levelSelect = () => {
     shuffledCards();
     imageGenerator();
     flipCounter = [];
-    document.getElementById("score").innerText = 0;
+    document.getElementById("total-score").innerText = 0
+    document.getElementById("score").innerText = 0
 }
 
