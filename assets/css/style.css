@@ -195,6 +195,7 @@ button:hover {
         padding: 0.625em;
         text-align: center;
         font-size: 200%;
+        color: #FFFFFF;
 }
 
 .filler {
@@ -203,7 +204,6 @@ button:hover {
 
 .footer {
         color: #FFFFFF;
-        background-color: #1e2a40;
         width: 100%;
         text-align: center;
         margin-top: 0.625em;

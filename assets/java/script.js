@@ -28,6 +28,7 @@ var previousMediumScore = 100
 var previousHardScore = 100
 let hiddenScore = 0;
 
+/* What happens when the Easy, Medium or Hard buttons are clicked */
 let easyButton = document.getElementsByClassName("easy");
 easyButton[0].addEventListener("click", () => {
     easy = true;
@@ -357,17 +358,18 @@ let gameWin = () => {
     win = document.getElementsByClassName("congratulations");
     win[0].classList.toggle("congratulationsHidden");
     /* If statements update the users best score depending on the difficulty */
-    if (easy === true && hiddenScore < previousEasyScore) {
-        previousEasyScore = hiddenScore
-        document.getElementById("previous-score").innerText = previousEasyScore;
+
+    if (easy === true && hiddenScore < localStorage.previousEasyScore) {
+        localStorage.previousEasyScore = hiddenScore
+        document.getElementById("previous-score").innerText = localStorage.previousEasyScore;
+    } else {localStorage.previousEasyScore = localStorage.previousEasyScore}
+    if (medium === true && hiddenScore < localStorage.previousMediumScore) {
+        localStorage.previousMediumScore = hiddenScore
+        document.getElementById("previous-score").innerText = localStorage.previousMediumScore;
     }
-    if (medium === true && hiddenScore < previousMediumScore) {
-        previousEasyScore = hiddenScore
-        document.getElementById("previous-score").innerText = previousEasyScore;
-    }
-    if (hard === true && hiddenScore < previousHardScore) {
-        previousEasyScore = hiddenScore
-        document.getElementById("previous-score").innerText = previousEasyScore;
+    if (hard === true && hiddenScore < localStorage.previousHardScore) {
+        localStorage.previousHardScore = hiddenScore
+        document.getElementById("previous-score").innerText = localStorage.previousHardScore;
     }
     console.log("Win!");
 }
