@@ -7,7 +7,7 @@ The game offers 3 levels of difficulty, a score tracker to signify if the user i
 For the purposes of testing, using the inspect tool you can open up the 'game' section which will help you to match the cards as you can see the names of the images.
 You can also type gameWin() into the console which will trigger what would happen if you were to match all the cards.
 
-[Responsive Test Image](/assets/images/readme-screenshots/responsive.png)
+![Responsive Test Image](/assets/images/readme-images/responsive.png)
 
 ## UX
 

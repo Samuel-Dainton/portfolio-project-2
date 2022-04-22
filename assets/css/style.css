@@ -228,7 +228,8 @@ button:hover {
 
 /* Media device size queries */
 
-@media (max-width: 900px) {
+@media (max-width: 900px), 
+       (max-height: 925px) {
 
         .easy-game>.card {
                 height: 6.25em;
