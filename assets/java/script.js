@@ -5,7 +5,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     shuffledCards();
     imageGenerator();
-})
+});
 
 /**
  * Audio
@@ -23,9 +23,9 @@ let winSound = new Audio('./assets/sounds/game-win.wav');
 var easy = true;
 var medium = false;
 var hard = false;
-var easyScore = 100
-var mediumScore = 100
-var hardScore = 100
+var easyScore = 100;
+var mediumScore = 100;
+var hardScore = 100;
 
 let hiddenScore = 0;
 
@@ -35,40 +35,40 @@ easyButton[0].addEventListener("click", () => {
     easy = true;
     medium = false;
     hard = false;
-    easyGame = document.getElementsByClassName("game");
-    easyGame[0].classList.add("easy-game");
-    easyGame[0].classList.remove("medium-game");
-    easyGame[0].classList.remove("hard-game");
+    gameType = document.getElementsByClassName("game");
+    gameType[0].classList.add("easy-game");
+    gameType[0].classList.remove("medium-game");
+    gameType[0].classList.remove("hard-game");
     levelSelect();
-    hiddenScore = 0
+    hiddenScore = 0;
     document.getElementById("difficulty-text").innerText = "Easy";
-})
+});
 let mediumButton = document.getElementsByClassName("medium");
 mediumButton[0].addEventListener("click", () => {
     medium = true;
     easy = false;
     hard = false;
-    easyGame = document.getElementsByClassName("game");
-    easyGame[0].classList.remove("easy-game");
-    easyGame[0].classList.add("medium-game");
-    easyGame[0].classList.remove("hard-game");
+    gameType = document.getElementsByClassName("game");
+    gameType[0].classList.remove("easy-game");
+    gameType[0].classList.add("medium-game");
+    gameType[0].classList.remove("hard-game");
     levelSelect();
-    hiddenScore = 0
-    document.getElementById("difficulty-text").innerText = "Medium"
-})
+    hiddenScore = 0;
+    document.getElementById("difficulty-text").innerText = "Medium";
+});
 let hardButton = document.getElementsByClassName("hard");
 hardButton[0].addEventListener("click", () => {
     hard = true;
     easy = false;
     medium = false;
-    easyGame = document.getElementsByClassName("game");
-    easyGame[0].classList.remove("easy-game");
-    easyGame[0].classList.remove("medium-game");
-    easyGame[0].classList.add("hard-game");
+    gameType = document.getElementsByClassName("game");
+    gameType[0].classList.remove("easy-game");
+    gameType[0].classList.remove("medium-game");
+    gameType[0].classList.add("hard-game");
     levelSelect();
-    hiddenScore = 0
-    document.getElementById("difficulty-text").innerText = "Hard"
-})
+    hiddenScore = 0;
+    document.getElementById("difficulty-text").innerText = "Hard";
+});
 
 /**
  * Image List - An array of all the images, taken by the Shuffle Cards section before going into the game.
@@ -234,7 +234,7 @@ let shuffledCards = () => {
         arrayOrder.sort(() => Math.random() - 0.5);
         return arrayOrder;
     }
-}
+};
 
 /**
  * Generate Card Grid - Creates the cards by placing div elements into a grid, then placing
@@ -278,8 +278,8 @@ let imageGenerator = () => {
             card.classList.toggle("flipCard");
             checkForMatch(names);
 
-        })
-    })
+        });
+    });
 };
 
 /**
@@ -294,8 +294,8 @@ let imageGenerator = () => {
  * the turn counter is increased and the cards flip back over after a short delay.
  */
 
-let numberOfCards = []
-let flipCounter = []
+let numberOfCards = [];
+let flipCounter = [];
 const checkForMatch = (names) => {
 
     let targetCard = names.target;
@@ -336,7 +336,7 @@ const checkForMatch = (names) => {
     if (hard === true && flipCounter.length === 18) {
         gameWin();
     }
-}
+};
 /**
  * Moves Counter - Increases the number of moves and inserts the number into two places on the page 
  * where it is visible to the player.
@@ -363,20 +363,20 @@ let gameWin = () => {
 
     if (easy === true && hiddenScore < easyScore) {
         document.getElementById("previous-score").innerText = hiddenScore;
-        easyScore = hiddenScore
-    } 
+        easyScore = hiddenScore;
+    }
     
     if (medium === true && hiddenScore < mediumScore) {
         document.getElementById("previous-score").innerText = hiddenScore;
-        mediumScore = hiddenScore
+        mediumScore = hiddenScore;
     }
 
     if (hard === true && hiddenScore < hardScore) {
         document.getElementById("previous-score").innerText = hiddenScore;
-        hardScore = hiddenScore
-    } 
+        hardScore = hiddenScore;
+    }
     console.log("Win!");
-}
+};
 
 /**
  * Restart Buttons - The "Play Again?" button and difficulty buttons are both used to start the game over.
@@ -387,7 +387,7 @@ let gameWin = () => {
 let button = document.getElementsByClassName("restart");
 button[0].addEventListener("click", function () {
     restart();
-})
+});
 
 let restart = () => {
     win[0].classList.toggle("congratulationsHidden");
@@ -398,10 +398,10 @@ let restart = () => {
     shuffledCards();
     imageGenerator();
     flipCounter = [];
-    hiddenScore = 0
-    document.getElementById("total-score").innerText = 0
-    document.getElementById("score").innerText = 0
-}
+    hiddenScore = 0;
+    document.getElementById("total-score").innerText = 0;
+    document.getElementById("score").innerText = 0;
+};
 
 let levelSelect = () => {
     const elements = document.getElementsByClassName("card");
@@ -411,7 +411,7 @@ let levelSelect = () => {
     shuffledCards();
     imageGenerator();
     flipCounter = [];
-    document.getElementById("total-score").innerText = 0
-    document.getElementById("score").innerText = 0
-}
+    document.getElementById("total-score").innerText = 0;
+    document.getElementById("score").innerText = 0;
+};
 
