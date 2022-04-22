@@ -1,5 +1,7 @@
 # Memory Game
 
+The live link to the website can be found here - https://samuel-dainton.github.io/portfolio-project-2/
+
 The Memory Game is a game made primarily using Javascript in which the user must match all the pairs of cards with fruit icons on them. It is a test of memory as once two cards that are not a matching pair are slected, the cards quickly turn themselves back over. If a user finds a new card matching one they found previously, they'll have to remember where the last one they found was otherwise it will increase their score.
 
 The game offers 3 levels of difficulty, a score tracker to signify if the user improved on their best score or not and has a variety of audio and visual queues to keep them engaged and entertained.
