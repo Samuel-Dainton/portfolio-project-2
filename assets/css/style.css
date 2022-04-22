@@ -18,7 +18,7 @@ h1 {
         font-size: 350%;
         color: #0c0f32;
         text-align: center;
-                text-decoration: underline;
+        text-decoration: underline;
 }
 
 .header {
@@ -137,7 +137,7 @@ button:hover {
         text-align: center;
         background-color: #1e2a40;
         border-radius: 1.25em;
-        width: 31.25em;
+        width: 20em;
         margin: auto;
 }
 
@@ -146,7 +146,7 @@ button:hover {
 }
 
 .congratulations {
-        width: 37.5em;
+        width: 30em;
         padding: 0.625em;
         margin: auto;
         background-color: white;
@@ -165,7 +165,7 @@ button:hover {
 }
 
 .score-wrapper {
-        width: 31.25em;
+        width: 25em;
         margin: auto;
         padding: 0.3125em;
         border-radius: 1.25em;
@@ -247,23 +247,25 @@ button:hover {
 
         .guesses {
                 font-size: 150%;
-                width: 25em;
+                width: 16em;
 
         }
 
         .congratulations {
-                transform: translate(0px, -24.375em);
+                transform: translate(0px, -17.8em);
+                width: 24em;
         }
+
+        .score-wrapper {
+                width: 20em;
+        }
+
 }
 
 @media (max-width: 700px) {
         .hard-game>.card {
                 height: 3.125em;
                 width: 3.125em;
-        }
-
-        .restart {
-                font-size: 70%;
         }
 
         .footer {
@@ -291,21 +293,9 @@ button:hover {
                 margin: 0.1875em;
         }
 
-        .guesses {
-
-                width: 18.75em;
-
-        }
-
         .congratulations {
-                width: 16.25em;
-                padding: 0.625em;
-                transform: translate(0px, -21.25em);
-                font-size: 70%;
-        }
-
-        .score-wrapper {
-                width: 15.625em;
+                font-size: 110%;
+                transform: translate(0px, -22em);
         }
 }
 
@@ -316,7 +306,7 @@ button:hover {
         }
 
         .game {
-                grid-gap: 0.15em;
+                grid-gap: 0em;
         }
 
         .easy-game>.card {
@@ -332,20 +322,44 @@ button:hover {
         }
 
         .hard-game>.card {
-                height: 2.5em;
-                width: 2.5em;
+                height: 3.125em;
+                width: 3.125em;
         }
 
 
 
         .guesses {
                 font-size: 100%;
-                width: 12.5em;
+                width: 14em;
 
         }
 
         .congratulations {
-                transform: translate(0px, -14em);
+                transform: translate(0px, -18em);
+                font-size: 80%;
+                width: 21em;
         }
-        .footer{ font-size: 70%;}
+
+        .restart {
+                font-size: 80%;
+        }
+
+        .footer {
+                font-size: 70%;
+        }
+}
+
+@media (max-width: 400px) {
+
+        .medium-game>.card {
+                height: 2.5em;
+                width: 2.5em;
+               
+        }
+
+        .hard-game>.card {
+                height: 2.5em;
+                width: 2.5em;
+        }
+      
 }
