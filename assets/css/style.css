@@ -151,7 +151,7 @@ button:hover {
         margin: auto;
         background-color: white;
         text-align: center;
-        transform: translate(0px, -31.25em);
+        transform: translate(0px, -22.5em);
         border: 0.3125em rgb(0, 0, 0) solid;
         background: url(../images/confetti.png);
         background-size: contain;

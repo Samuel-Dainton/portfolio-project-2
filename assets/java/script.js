@@ -23,9 +23,10 @@ let winSound = new Audio('./assets/sounds/game-win.wav');
 var easy = true;
 var medium = false;
 var hard = false;
-var previousEasyScore = 100
-var previousMediumScore = 100
-var previousHardScore = 100
+var easyScore = 100
+var mediumScore = 100
+var hardScore = 100
+
 let hiddenScore = 0;
 
 /* What happens when the Easy, Medium or Hard buttons are clicked */
@@ -357,20 +358,23 @@ let gameWin = () => {
     winSound.play(), 1000;
     win = document.getElementsByClassName("congratulations");
     win[0].classList.toggle("congratulationsHidden");
+   
     /* If statements update the users best score depending on the difficulty */
 
-    if (easy === true && hiddenScore < localStorage.previousEasyScore) {
-        localStorage.previousEasyScore = hiddenScore
-        document.getElementById("previous-score").innerText = localStorage.previousEasyScore;
-    } else {localStorage.previousEasyScore = localStorage.previousEasyScore}
-    if (medium === true && hiddenScore < localStorage.previousMediumScore) {
-        localStorage.previousMediumScore = hiddenScore
-        document.getElementById("previous-score").innerText = localStorage.previousMediumScore;
+    if (easy === true && hiddenScore < easyScore) {
+        document.getElementById("previous-score").innerText = hiddenScore;
+        easyScore = hiddenScore
+    } 
+    
+    if (medium === true && hiddenScore < mediumScore) {
+        document.getElementById("previous-score").innerText = hiddenScore;
+        mediumScore = hiddenScore
     }
-    if (hard === true && hiddenScore < localStorage.previousHardScore) {
-        localStorage.previousHardScore = hiddenScore
-        document.getElementById("previous-score").innerText = localStorage.previousHardScore;
-    }
+
+    if (hard === true && hiddenScore < hardScore) {
+        document.getElementById("previous-score").innerText = hiddenScore;
+        hardScore = hiddenScore
+    } 
     console.log("Win!");
 }
 
